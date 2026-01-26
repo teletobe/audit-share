@@ -1,0 +1,24 @@
+Task: Analyze the provided narrative and extract tags from these 3 fixed categories using EXCLUSIVELY the predefined tag lists below. Select ALL applicable tags per category based on explicit narrative content.
+
+Output Format: Strict JSON only:
+{
+  "situation_tags": ["tag1", "tag2"],
+  "value_tags": ["tag1", "tag2"]
+}
+
+Tag Selection Rules:
+1. Situation Tags (MAX 5): Select from what the content is about: 
+   [Job recommendation, Career path guidance, Skill assessment, Company evaluation, Information disclosure, Personal advice, Sensitive content handling, Cultural adaptation, Risk communication, Harm prevention, Crisis response, Mental health safeguarding, Bias mitigation, Error correction, Explanation provision, Uncertainty communication, User customization, Consent management, Accessibility feature, Boundary setting, Legal compliance, Financial advice, Health guidance, Educational content, Data minimization, Source verification, Third-party integration, Data retention, Resume feedback, Interview preparation, Salary negotiation, Workplace rights, Career transition, Upskilling advice, Job market analysis]
+   or who is involved when important to the situation:
+   [Immigrant/refugee, Disabled person, Low-income individual, Youth/student, Elderly worker, Gender minority, Ethnic minority, Political minority, Career changer, Precarious worker, Veteran, Ex-offender, Caregiver, Rural resident, Neurodiverse individual, Non-native speaker, LGBTQ+ individual, Chronically ill person, Single parent, Religious minority, First-generation professional, Unemployed long-term, Gig economy worker, Intern/apprentice, Undocumented worker]
+2. Value Tags (MAX 5): Select value(s) that best fits this narrative; 
+
+Analysis Guidelines:
+- SITUATION: Tag what the chatbot DOES (actions/functions described) or who is EXPLICITLY named in "Raised By" or "Context"
+- VALUES: Tag values listed in "Value Relationships" section or additional ones from analysing the narrative. Select 3 AT MOST!
+- SOMETIMES infer tags - but require some direct text evidence
+- IGNORE any tags not in predefined lists
+- INCLUDE multiple tags per category when justified
+
+Narrative Input:
+[Insert full narrative text here]

@@ -1,0 +1,29 @@
+{
+  "workshopDate": "2025-07-09",
+  "sourceBoardID": "WS-1-board2",
+  "storyParticipantNumber": "19",
+  "iWant": "the chatbot to not only provide suggestions that already fit whatever information the person provides but also well argumented suggestions from other fields",
+  "soThat": "it might cause some broadening of the personal horizon and \"thinking outside of the box\"",
+  "because": "I know that one cannot imagine oneself in jobs and fields one doesn't know about (or hasn't been suggested to be a good fit for before).",
+  "criteriaParticipantNumbers": "9,13,14,19",
+  "desirable": "help with reflecting why something is not interesting to the person. \"Do you want to see some out-of-the-box recommendations\" - button",
+  "acceptable": "for every suggestion fitting the answers also one countersuggestion",
+  "dealBreakers": "strictly limited suggestions based on person's answer, historical stereotypes and biases",
+  "comment": "",
+  "values": [
+    {
+      "participantNumber": "9",
+      "value": "(personal) Growth",
+      "explanation": "other options increase likelihood of personal growth",
+      "category": "promote",
+      "importance": "Important"
+    },
+    {
+      "participantNumber": "13",
+      "value": "Diversity",
+      "explanation": "diversity of backgrounds for different professions",
+      "category": "promote",
+      "importance": "Important"
+    }
+  ]
+}

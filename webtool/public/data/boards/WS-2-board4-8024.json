@@ -1,0 +1,71 @@
+{
+  "workshopDate": "2025-07-10",
+  "sourceBoardID": "WS-2-board4",
+  "storyParticipantNumber": "15",
+  "iWant": "it to be necessary and really arguably meaningful, not just spent money in an AI tool where the money would've been better spent for human career coaches",
+  "soThat": "peoples personal experiences and human connection does not go overlooked by a new (very resourceful) AI-Chatbot",
+  "because": "I know of the effects on energy consumption, peoples work in low income countries, water etc and the people working as career counsellors might get overlooked and underappreciated (such as care workers)",
+  "criteriaParticipantNumbers": "15,21,23",
+  "desirable": "- tool refers to human contact person (maybe specific to your needs)\n- do it as energy efficient (green anergy) as well to CO2 compensation",
+  "acceptable": "coaches using it to find help for me (expert tool)",
+  "dealBreakers": "- \"you don't need to go to a career coach anymore\"\n- \"this is exactly what you need to do, get going\"",
+  "comment": "",
+  "values": [
+    {
+      "participantNumber": "15",
+      "value": "Sustainability",
+      "explanation": "AI Tool uses a lot of natural resources",
+      "category": "Promote",
+      "importance": "Super Important"
+    },
+    {
+      "participantNumber": "21",
+      "value": "Respect",
+      "explanation": "ideally it would be respectful towards the environment, resources and human career coaches",
+      "category": "Promote",
+      "importance": "Super Important"
+    },
+    {
+      "participantNumber": "23",
+      "value": "Beneficience",
+      "explanation": "we need to understand who really benefits from the tool before publishing it",
+      "category": "Promote",
+      "importance": "Super Important"
+    },
+    {
+      "participantNumber": "15",
+      "value": "Accountability",
+      "explanation": "maybe it is better if coaches can be held accountable for using the tool. Moving the access to accountable personel",
+      "category": "Promote",
+      "importance": "Super Important"
+    },
+    {
+      "participantNumber": "21",
+      "value": "Overconfidence",
+      "explanation": "too much confidence can be harmful",
+      "category": "Hinder",
+      "importance": "Super Important"
+    },
+    {
+      "participantNumber": "15",
+      "value": "Authenticity",
+      "explanation": "is it authentic if only this tool is green energy but nothing else? (green-washing)",
+      "category": "Hinder",
+      "importance": "Important"
+    },
+    {
+      "participantNumber": "15",
+      "value": "Support/Solidarity",
+      "explanation": "workers who might lose their job becasue of such tools",
+      "category": "Hinder",
+      "importance": "Important"
+    },
+    {
+      "participantNumber": "21",
+      "value": "Accessibility",
+      "explanation": "with other humans in the loop it could be more accessible",
+      "category": "Promote",
+      "importance": "Important"
+    }
+  ]
+}

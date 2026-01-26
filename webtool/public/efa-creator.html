@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EFA Creator</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="efa-creator-style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <button class="back-button" onclick="location.href='efa.html'">
+        ← Back
+      </button>
+      <header>
+        <h1>EFA Creator</h1>
+        <p>
+          Upload a JSON file with tagged narratives and view them in table or
+          free plane view. Select narratives to create an EFA.
+        </p>
+      </header>
+
+      <div class="upload-section">
+        <input type="file" id="json-upload" accept=".json" />
+        <button id="load-json-btn" class="btn">Load JSON</button>
+      </div>
+
+      <div class="narratives-table">
+        <table id="narrative-table" style="display: none">
+          <thead>
+            <tr>
+              <th>Select</th>
+              <th>Name</th>
+              <th>Context</th>
+              <th>Tags</th>
+            </tr>
+          </thead>
+          <tbody id="table-body"></tbody>
+        </table>
+
+        <div id="free-plane-container">
+          <div id="plane-sidebar" style="display: none">
+            <h3>Select Narratives</h3>
+            <!-- <h1><input type="checkbox" id="select-all-plane" /> Select All</h1> -->
+
+            <div id="narrative-list"></div>
+          </div>
+          <div id="plane-content">
+            <svg id="plane-lines"></svg>
+          </div>
+          <button id="toggle-sidebar" class="btn" style="display: none">
+            ☰ Toggle Sidebar
+          </button>
+        </div>
+
+        <div
+          class="table-footer"
+          id="efa-btn-container"
+          style="display: none; margin-top: 20px"
+        >
+          <div class="view-toggle">
+            <button id="toggle-view" class="btn">
+              Switch to Free Plane View
+            </button>
+            <button id="reset-view" class="btn" style="display: none">
+              Reset Plane Positions
+            </button>
+            <div id="hindex-slider-container">
+              <label style="margin-left: 1rem">
+                Min H-index:
+                <input
+                  type="range"
+                  id="hindex-threshold"
+                  min="0"
+                  max="10"
+                  value="1"
+                />
+                <span id="hindex-threshold-value">1</span>
+              </label>
+            </div>
+
+            <button id="toggle-lines-btn" class="btn">Hide Lines</button>
+          </div>
+          <button id="create-efa-btn" class="btn primary">
+            Create EFA from Selection
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="modal-overlay"></div>
+
+    <div id="efa-modal">
+      <button id="modal-close-btn">✕</button>
+      <h2>Create EFA</h2>
+      <div id="selected-narratives"></div>
+      <form id="efa-form">
+        <input
+          type="text"
+          name="efa-id"
+          placeholder="EFA ID"
+          class="w-full border p-2 rounded"
+          style="margin-bottom: 0.5rem"
+          required
+        />
+        <input
+          type="text"
+          name="efa-title"
+          placeholder="EFA Title"
+          class="w-full border p-2 rounded"
+          style="margin-bottom: 0.5rem"
+          required
+        />
+        <textarea
+          name="efa-description"
+          placeholder="Description"
+          class="w-full border p-2 rounded"
+          required
+        ></textarea>
+
+        <div class="core-values-section" style="margin-top: 1rem">
+          <label
+            ><strong>Core Ethical Values</strong> (select one or more):</label
+          >
+          <div id="coreValuesContainer" class="checkbox-grid"></div>
+        </div>
+
+        <hr />
+
+        <div id="criteria-section">
+          <h3>Testable Criteria</h3>
+          <div id="criteria-list"></div>
+          <button
+            type="button"
+            id="add-criteria-btn"
+            style="
+              margin-top: 0.5rem;
+              margin-bottom: 0.5rem;
+              padding: 0.4rem 1rem;
+              background-color: #eee;
+              border-radius: 4px;
+              cursor: pointer;
+              border: 1px solid #ccc;
+            "
+          >
+            + Add Criterion
+          </button>
+        </div>
+
+        <input
+          type="text"
+          name="efa-weight"
+          placeholder="Weight"
+          class="w-full border p-2 rounded"
+          style="margin-bottom: 0.5rem"
+        />
+        <input
+          type="text"
+          name="efa-priority"
+          placeholder="Priority"
+          class="w-full border p-2 rounded"
+          style="margin-bottom: 0.5rem"
+        />
+
+        <button
+          type="submit"
+          class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+        >
+          Save EFA
+        </button>
+      </form>
+    </div>
+
+    <!-- JS order: main first, then connection strategies -->
+    <script src="connections/tagConnections.js"></script>
+    <script src="connections/weightConnections.js"></script>
+    <script src="connections/hindexConnections.js"></script>
+    <script src="connections/stepwiseConnections.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EFA Creator</title>
+    <link rel="stylesheet" href="efa.css" />
+  </head>
+  <body>
+    <div class="container">
+      <button class="back-button" onclick="location.href='efa.html'">
+        ← Back
+      </button>
+      <header>
+        <h1>EFA JSON Viewer</h1>
+        <p>Upload a JSON file and view its narratives below.</p>
+      </header>
+
+      <div class="upload-section">
+        <input type="file" id="json-upload" accept=".json" />
+        <button id="load-json-btn" class="btn">Load JSON</button>
+      </div>
+
+      <div class="narratives-table">
+        <table id="narrative-table" style="display: none">
+          <thead>
+            <tr>
+              <th>Select</th>
+              <th>Name</th>
+              <th>Context</th>
+              <th>Tags</th>
+            </tr>
+          </thead>
+          <tbody id="table-body"></tbody>
+        </table>
+        <div
+          class="table-footer"
+          id="efa-btn-container"
+          style="display: none; margin-top: 20px"
+        >
+          <button id="create-efa-btn" class="btn primary">
+            Create EFA from Selection
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Overlay -->
+    <div
+      id="modal-overlay"
+      style="
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 40;
+      "
+    ></div>
+
+    <!-- EFA Modal -->
+    <div
+      id="efa-modal"
+      style="
+        display: none;
+        position: fixed;
+        top: 10%;
+        left: 50%;
+        transform: translateX(-50%);
+        background: white;
+        padding: 2rem;
+        border-radius: 0.5rem;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        z-index: 50;
+        max-width: 1200px;
+        width: 95%;
+        overflow-y: auto;
+        max-height: 90vh;
+      "
+    >
+      <button
+        id="modal-close-btn"
+        style="
+          position: absolute;
+          top: 0.5rem;
+          right: 0.5rem;
+          font-size: 1.2rem;
+          border: none;
+          background: none;
+          cursor: pointer;
+        "
+      >
+        ✕
+      </button>
+      <h2 style="font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem">
+        Create EFA
+      </h2>
+
+      <div
+        id="selected-narratives"
+        style="
+          margin-bottom: 1rem;
+          max-height: 800px;
+          overflow-y: auto;
+          border: 1px solid #ccc;
+          padding: 0.5rem;
+          font-size: 0.9rem;
+          background-color: #f9f9f9;
+        "
+      ></div>
+
+      <form id="efa-form" class="space-y-4">
+        <input
+          type="text"
+          name="efa-id"
+          placeholder="EFA ID"
+          class="w-full border p-2 rounded"
+          style="margin-bottom: 0.5rem"
+          required
+        />
+        <input
+          type="text"
+          name="efa-title"
+          placeholder="EFA Title"
+          class="w-full border p-2 rounded"
+          style="margin-bottom: 0.5rem"
+          required
+        />
+        <textarea
+          name="efa-description"
+          placeholder="Description"
+          class="w-full border p-2 rounded"
+          required
+        ></textarea>
+
+        <div class="core-values-section" style="margin-top: 1rem">
+          <label
+            ><strong>Core Ethical Values</strong> (select one or more):</label
+          >
+          <div id="coreValuesContainer"></div>
+        </div>
+
+        <hr />
+
+        <div id="criteria-section">
+          <h3>Testable Criteria</h3>
+          <div id="criteria-list"></div>
+          <button
+            type="button"
+            id="add-criteria-btn"
+            style="
+              margin-top: 0.5rem;
+              margin-bottom: 0.5rem;
+              padding: 0.4rem 1rem;
+              background-color: #eee;
+              border-radius: 4px;
+              cursor: pointer;
+              border: 1px solid #ccc;
+            "
+          >
+            + Add Criterion
+          </button>
+        </div>
+
+        <input
+          type="text"
+          name="efa-weight"
+          placeholder="Weight"
+          class="w-full border p-2 rounded"
+          style="margin-bottom: 0.5rem"
+        />
+        <input
+          type="text"
+          name="efa-priority"
+          placeholder="Priority"
+          class="w-full border p-2 rounded"
+          style="margin-bottom: 0.5rem"
+        />
+
+        <button
+          type="submit"
+          class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+        >
+          Save EFA
+        </button>
+      </form>
+    </div>
+
+    <script src="efa-creator.js"></script>
+  </body>
+</html>

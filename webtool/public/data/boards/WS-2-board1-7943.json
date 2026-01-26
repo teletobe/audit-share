@@ -1,0 +1,71 @@
+{
+  "workshopDate": "2025-07-10",
+  "sourceBoardID": "WS-2-board1",
+  "storyParticipantNumber": "21",
+  "iWant": "it to be able to explain in easy and accessible language",
+  "soThat": "everyone regardless of backgrounds can understand the outcome of the tool",
+  "because": "I know how much people from different backgrounds struggle with difficult language and long and complex content",
+  "criteriaParticipantNumbers": "15,21,23",
+  "desirable": "- accessible in different languages and sign language\n- \"einfache Sprache\" (as an option) to be expanded etc.\n- multiple input and output channels\n- visual representation of content should be accessible\n- structured and short sentences\n- screen reader proof",
+  "acceptable": "",
+  "dealBreakers": "- only complex terms\n- just a link list to other complex texts\n- if it doesn't understand my natural language\n- produce gibberish",
+  "comment": "- Respect and Dignity placed close to each other.\n- Autonomy, Empowerment and Participation placed close to each other.\n- Diversity and Accessibility placed close to each other.",
+  "values": [
+    {
+      "participantNumber": "21",
+      "value": "Trust",
+      "explanation": "If you cannot understand it or the output is wrong, you lose trust in it",
+      "category": "hinder",
+      "importance": "Important"
+    },
+    {
+      "participantNumber": "23",
+      "value": "Respect",
+      "explanation": "Developing something to include access to everyone shows respect to all people",
+      "category": "promote",
+      "importance": "Important"
+    },
+    {
+      "participantNumber": "21",
+      "value": "Human Dignity",
+      "explanation": "Technology might \"look down\" on you based on the used language",
+      "category": "hinder",
+      "importance": "Important"
+    },
+    {
+      "participantNumber": "15",
+      "value": "Autonomy",
+      "explanation": "All people can self-dependently use the tool",
+      "category": "promote",
+      "importance": "Super Important"
+    },
+    {
+      "participantNumber": "15",
+      "value": "Empowerment",
+      "explanation": "People should be empowered that their input also matters",
+      "category": "promote",
+      "importance": "Super Important"
+    },
+    {
+      "participantNumber": "15",
+      "value": "Participation",
+      "explanation": "Everyone should be thought of as a participant",
+      "category": "promote",
+      "importance": "Super Important"
+    },
+    {
+      "participantNumber": "15",
+      "value": "Diversity",
+      "explanation": "For a broad user group and so that no one feels excluded",
+      "category": "promote",
+      "importance": "Super Important"
+    },
+    {
+      "participantNumber": "21",
+      "value": "Accessibility",
+      "explanation": "The tool needs to be accessible for everyone",
+      "category": "promote",
+      "importance": "Super Important"
+    }
+  ]
+}

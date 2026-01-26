@@ -1,0 +1,71 @@
+{
+  "workshopDate": "2025-07-10",
+  "sourceBoardID": "WS-2-board3",
+  "storyParticipantNumber": "29",
+  "iWant": "to know the company environments/cultures - is it open-minded? conservative? exploitative? hierarchical?",
+  "soThat": "I can get a feeling about them before applying, whether I would feel comfortable working there",
+  "because": "I am an immigrant and hold left-wing beliefs, and don't want to deal with a hostile working environment in my daily life.",
+  "criteriaParticipantNumbers": "1,2,29",
+  "desirable": "presents information + sources so I can make an informed decision ",
+  "acceptable": "presents incidents/'red flags' if there are any",
+  "dealBreakers": "actively promoting unethical companies / decides whether a company is good/bad for you",
+  "comment": "",
+  "values": [
+    {
+      "participantNumber": "1",
+      "value": "Empowerment",
+      "explanation": "I have infos to make informed decision",
+      "category": "Promote",
+      "importance": "Super Important"
+    },
+    {
+      "participantNumber": "2",
+      "value": "Transparency",
+      "explanation": "I receive all sources the system uses for decision",
+      "category": "Promote",
+      "importance": "Super Important"
+    },
+    {
+      "participantNumber": "29",
+      "value": "Reliability",
+      "explanation": "the less information the more I have to rely on the bot",
+      "category": "Hinder",
+      "importance": "Super Important"
+    },
+    {
+      "participantNumber": "1",
+      "value": "Health",
+      "explanation": "bad mental health when company mistreats employees",
+      "category": "Promote",
+      "importance": "Super Important"
+    },
+    {
+      "participantNumber": "2",
+      "value": "Participation",
+      "explanation": "the data used comes from employees' participation in reviewing and reporting companies/cases",
+      "category": "Promote",
+      "importance": "Important"
+    },
+    {
+      "participantNumber": "1",
+      "value": "Honesty",
+      "explanation": "data source has to be honest",
+      "category": "Promote",
+      "importance": "Important"
+    },
+    {
+      "participantNumber": "29",
+      "value": "Growth",
+      "explanation": "getting more information helps growing my understanding",
+      "category": "Promote",
+      "importance": "Important"
+    },
+    {
+      "participantNumber": "1",
+      "value": "Creativity",
+      "explanation": "you just go through a list of sources",
+      "category": "Hinder",
+      "importance": "Important"
+    }
+  ]
+}

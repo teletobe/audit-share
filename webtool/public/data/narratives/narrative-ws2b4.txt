@@ -1,0 +1,45 @@
+Narrative ID: narrative-ws2b4
+
+
+Core Concern
+There is a concern that the implementation of a new AI-Chatbot for career counseling may overlook personal experiences and human connection, leading to an underappreciation of human career counselors. Additionally, the environmental impact and energy consumption of the AI tool are significant considerations.
+
+
+Raised By
+Individuals concerned about the ethical implications of AI in career counseling and its environmental impact.
+
+
+Context
+In a situation where job seekers might interact with a newly introduced AI-Chatbot for career counseling, there is a worry that the system might not fully replace the human element. The bot is intended to assist but there is a risk it may overshadow the need for human career counselors, who provide personalized and empathetic support.
+
+
+Stakeholder Expectations
+Stakeholders want the AI-Chatbot to be both meaningful and resource-efficient, ensuring that it complements rather than replaces human career counselors. They hope the tool will be respectful towards the environment, resources, and the livelihoods of career counselors. The system should also be accountable, beneficent, and authentic, avoiding green-washing and supporting solidarity with workers who might be affected.
+
+
+Testable Boundaries
+Acceptable: Coaches should use the AI tool as an expert resource to assist job seekers.
+Ideal: The tool should refer job seekers to a human contact person specific to their needs and operate using green energy with CO2 compensation.
+Deal-Breaker: The AI tool should not suggest that users no longer need to go to a career coach or provide overly prescriptive advice such as "this is exactly what you need to do, get going."
+
+
+Value Relationships
+Addressing this promotes Sustainability because the AI Tool uses a lot of natural resources, and handling it respectfully ensures environmental responsibility. It also promotes Respect as it would be respectful towards the environment, resources, and human career coaches. Beneficence is promoted by understanding who truly benefits from the tool before its release. Accountability is crucial as it ensures that coaches can be held responsible for using the tool appropriately. Additionally, Accessibility is promoted as having humans in the loop can make the system more accessible.
+
+
+Addressing this violates Overconfidence because too much confidence in the AI tool can be harmful, potentially leading to green-washing (Authenticity) if only the tool is green energy but nothing else. It also risks Support/Solidarity as workers who might lose their jobs due to such tools could be negatively impacted.
+
+
+Primary Values
+Sustainability is super important as the AI Tool's environmental impact is a significant concern. Respect is also super important as the tool should be respectful towards the environment, resources, and human career counselors. Beneficence is super important as understanding who benefits from the tool is crucial before publication.
+
+
+Supporting Values
+Accountability is super important as moving access to accountable personnel ensures responsible use. Overconfidence is a super important hindrance as too much confidence can be harmful. Authenticity and Support/Solidarity are important as ensuring the tool is authentic and supports those affected is crucial.
+
+
+Metadata
+Source Board: WS-2-board4
+Workshop Date: 2025-07-10
+Tech Version: In Design Phase
+Category: Interaction

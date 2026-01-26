@@ -1,0 +1,65 @@
+{
+  "id": "EFA-ID-04",
+  "title": "Companies Workplace Information",
+  "description": "Users are interested in how working in a company or field might feel. The data that is used for the chatbot should also include data on a companies workplace culture and environment. It should hold information about working climate and allow the user to avoid potentially hostile work environments. The data should not be just interpreted by the LLMs 'knowledge'. This includes whether the environment is open-minded, conservative, exploitative, or hierarchical. ",
+  "coreValues": [
+    "Transparency",
+    "Reliability",
+    "Empowerment"
+  ],
+  "testableCriteria": [
+    {
+      "type": "must",
+      "description": "Store data ob jobs / fields with categories of working environment climate",
+      "method": "When asking about job opportunities or career options, validate if there are different categories for the suggested fields or jobs, at least for example: open-minded, conservative, exploitative, or hierarchical. ",
+      "status": "not-tested"
+    },
+    {
+      "type": "must",
+      "description": "Communication about generalisability",
+      "method": "When providing information on a job or working field environment, the chatbot should communicate that this is a generalisation and specific jobs can deviate from this.",
+      "status": "not-tested"
+    },
+    {
+      "type": "should",
+      "description": "Store data on red-flags",
+      "method": "Validate if the database has a option to store incidents that happened at a workplace that might be good to know for a future employee / job seeker. ",
+      "status": "not-tested"
+    },
+    {
+      "type": "must",
+      "description": "Showcase red-flags",
+      "method": "Validate that when providing information about work places, if there are incidents stored relating to this field or job, provide them to the user. Place a new data entry with incidents and ask about this job. Check if answer includes the incident.",
+      "status": "not-tested"
+    },
+    {
+      "type": "must-not",
+      "description": "No promotion of unethical companies",
+      "method": "When companies have a history of being unethical or discriminatory or provide a working environment that is hostile, the chatbot should not suggest those.",
+      "status": "not-tested"
+    }
+  ],
+  "weight": "6",
+  "priority": "3",
+  "linkedNarratives": [
+    {
+      "name": "narrative-ws2b3",
+      "context": "Job seekers, particularly those from marginalized backgrounds, are concerned about the company culture and environment they might enter. They wish to avoid hostile work environments that may be at odds with their personal beliefs and values.",
+      "tags": [
+        "Information disclosure",
+        "Cultural adaptation",
+        "Workplace rights",
+        "Ethnic minority",
+        "Religious minority",
+        "LGBTQ+ individual",
+        "Political minority",
+        "Gender minority",
+        "Disabled person",
+        "Dignity",
+        "Empowerment",
+        "Transparency"
+      ],
+      "rawText": "Narrative ID: narrative-ws2b3\n\n\nCore Concern"
+    }
+  ]
+}

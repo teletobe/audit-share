@@ -1,0 +1,33 @@
+Below is a JSON that serves as raw data which was captured by participants. This data is unprocessed and needs to be transformed into a 1-pager 'Narrative' which will represent it. Its purpose is to be read through easily to get an understanding of the data without having to look at the raw data.\n
+Create a clear, structured narrative summary based ONLY on the JSON and following the narrative-template provide.\n
+Important:\n
+- process the data to capture important aspects of it at the right places\n
+- the participant numbers are not important any more, don't use them - only what they said in the datas content is important\n
+- use full sentences that can be read through\n
+- capture all of the data in the final narrative
+- Don't invent anything on top of it! No names or fictional scenarios!\n
+Follow the format of the narrative. If there is no data (e.g. for explanations) leave this out.\n
+Structure it all in paragraphs that are clear to read through and don't use lists unless necessary.
+\n\n${JSON.stringify(
+      loadedJson,
+      null,
+      2
+    )}
+\n\nNarrative Template:\n${template}`
+
+
+
+
+const prompt = `Below is a JSON that serves as raw data which was captured by participants. This data is unprocessed and needs to be transformed into a 1-pager 'Narrative' which will represent it. Its purpose is to be read through easily to get an understanding of the data without having to look at the raw data.\n
+Create a clear, structured narrative summary based ONLY on the JSON and following the narrative-template provide.\n
+Important:\n
+- process the data to capture important aspects of it at the right places\n
+- the participant numbers are not important any more, don't use them - only what they said in the datas content is important\n
+- use full sentences that can be read through\n
+- capture all of the data in the final narrative
+- follow the template strictly, from the title all the way to the metadata
+- Don't invent anything on top of it! No names or fictional scenarios!\n
+Follow the format of the narrative. If there is no data (e.g. for explanations) leave this out.\n
+Structure it all in paragraphs that are clear to read through and don't use lists unless necessary.
+\n\n${JSON.stringify(loadedJson, null, 2)}
+\n\nNarrative Template:\n${template}`;

@@ -1,0 +1,1445 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EFA Creator</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary: #0077cc;
+        --primary-dark: #0050a6;
+        --secondary: #7209b7;
+        --light: #f8f9fa;
+        --dark: #212529;
+        --gray: #6c757d;
+        --light-gray: #e9ecef;
+        --success: #2ecc71;
+        --danger: #e74c3c;
+        --warning: #f39c12;
+        --border: #dee2e6;
+        --bg-card: #ffffff;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Inter", sans-serif;
+      }
+
+      body {
+        background-color: var(--bg-card);
+        color: var(--dark);
+        line-height: 1.6;
+        min-width: 1400px; /* Prevent content from shrinking too much */
+        overflow-x: auto; /* Add horizontal scrollbar if needed */
+      }
+
+      .container {
+        max-width: 2200px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      header {
+        text-align: center;
+        margin-bottom: 30px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid var(--border);
+      }
+
+      header h1 {
+        color: var(--primary);
+        margin-bottom: 10px;
+      }
+
+      .upload-section {
+        display: flex;
+        gap: 15px;
+        margin-bottom: 20px;
+        align-items: center;
+      }
+
+      #json-upload {
+        padding: 10px;
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        background: white;
+        flex-grow: 1;
+      }
+
+      .btn {
+        padding: 10px 20px;
+        background: var(--primary);
+        color: white;
+        border: none;
+        border-radius: 6px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background 0.3s ease;
+      }
+
+      .btn:hover {
+        background: var(--primary-dark);
+      }
+
+      .btn.primary {
+        background: var(--secondary);
+      }
+
+      .btn.primary:hover {
+        background: #5f0a9d;
+      }
+
+      .narratives-table {
+        background: white;
+        padding: 25px;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        overflow: auto; /* Add scrolling if content is too large */
+        max-width: none; /* Remove max-width restriction */
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+      }
+
+      th,
+      td {
+        padding: 15px 20px; /* Increased from 12px 15px */
+        text-align: left;
+        border-bottom: 1px solid var(--border);
+      }
+
+      th {
+        background-color: rgba(67, 97, 238, 0.1);
+        color: var(--primary);
+        font-weight: 600;
+      }
+
+      tbody tr:hover {
+        background-color: rgba(67, 97, 238, 0.05);
+      }
+
+      .back-button {
+        display: block;
+        margin: 40px auto 20px auto;
+        padding: 12px 20px;
+        background-color: var(--gray);
+        color: white;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 16px;
+        text-align: center;
+        max-width: 200px;
+        transition: background-color 0.3s ease;
+      }
+
+      .back-button:hover {
+        background-color: #5a6268;
+      }
+
+      .table-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 20px;
+      }
+
+      .view-toggle {
+        display: flex;
+        gap: 10px;
+      }
+
+      /* Modal styles */
+      #modal-overlay {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 40;
+      }
+
+      #efa-modal {
+        display: none;
+        position: fixed;
+        top: 10%;
+        left: 50%;
+        transform: translateX(-50%);
+        background: white;
+        padding: 2rem;
+        border-radius: 0.5rem;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        z-index: 50;
+        max-width: 1400px; /* Increased width to match page */
+        width: 95%;
+        overflow-y: auto;
+        max-height: 90vh;
+      }
+
+      #modal-close-btn {
+        position: absolute;
+        top: 1.5rem;
+        right: 1.5rem;
+        font-size: 2rem;
+        border: none;
+        background: none;
+        cursor: pointer;
+      }
+
+      #selected-narratives {
+        margin-bottom: 1rem;
+        max-height: 800px;
+        overflow-y: auto;
+        border: 1px solid #ccc;
+        padding: 0.5rem;
+        font-size: 0.9rem;
+        background-color: #f9f9f9;
+      }
+
+      /* Additional styles for modal content */
+      #efa-modal h2 {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+      }
+
+      .core-values-section {
+        margin-top: 1rem;
+        padding: 1rem;
+        background-color: #f8f9fa;
+        border-radius: 0.5rem;
+      }
+
+      .checkbox-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0.1rem 1rem;
+        margin-left: 20px;
+      }
+
+      .criteria-entry {
+        margin-bottom: 15px;
+        padding: 15px;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        background-color: #f9f9f9;
+      }
+
+      #free-plane-container {
+        position: relative;
+        width: 100%; /* Full width of its container */
+        height: 80vh; /* 80% of viewport height */
+        min-height: 700px; /* Minimum height */
+        min-width: 1200px; /* Minimum width */
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        margin-top: 20px;
+        overflow: hidden;
+        background-color: var(--light);
+        display: none;
+      }
+
+      .plane-entry {
+        position: absolute;
+        padding: 12px;
+        background-color: rgba(255, 255, 255, 0.638);
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        cursor: move;
+        user-select: none;
+        min-width: 300px;
+        max-width: 350px;
+        z-index: 10;
+        transition: box-shadow 0.2s ease;
+      }
+
+      .plane-entry:hover {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        z-index: 100;
+      }
+
+      .plane-entry-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 8px;
+      }
+
+      .plane-entry-header input[type="checkbox"] {
+        margin-right: 8px;
+      }
+
+      .plane-entry-name {
+        font-weight: 600;
+        font-size: 15px;
+        color: var(--dark);
+        flex-grow: 1;
+      }
+
+      .plane-entry-content {
+        font-size: 14px;
+        color: var(--dark);
+        margin-bottom: 8px;
+        line-height: 1.4;
+      }
+
+      .plane-entry-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px;
+        margin-top: 6px;
+      }
+
+      .plane-tag {
+        padding: 4px 8px;
+        background-color: var(--light-gray);
+        border-radius: 50px;
+        font-size: 12px;
+        color: var(--dark);
+      }
+
+      .cluster-highlight {
+        background-color: rgba(173, 216, 230, 0.3);
+        border: 2px dashed #1e90ff;
+      }
+
+      .loading {
+        text-align: center;
+        padding: 20px;
+        color: var(--gray);
+        font-style: italic;
+      }
+
+      .error {
+        color: var(--danger);
+        padding: 20px;
+        background-color: rgba(231, 76, 60, 0.1);
+        border-radius: 4px;
+        text-align: center;
+      }
+
+      .narrative-full {
+        margin-bottom: 1.5rem;
+      }
+
+      .narrative-full h3 {
+        margin-top: 0;
+        margin-bottom: 0.5rem;
+        font-size: 1.1rem;
+        color: #333;
+        font-weight: 600;
+      }
+
+      .narrative-content {
+        white-space: pre-wrap;
+        word-break: break-word;
+        background-color: #f5f5f5;
+        padding: 1rem;
+        border-radius: 6px;
+        max-height: 200px;
+        overflow-y: auto;
+        font-family: inherit;
+        margin: 0;
+        line-height: 1.5;
+        font-size: 0.95rem;
+        border: 1px solid #e0e0e0;
+      }
+
+      #efa-form {
+        display: grid;
+        gap: 1rem;
+      }
+
+      #efa-form input,
+      #efa-form textarea,
+      #efa-form select {
+        width: 100%;
+        padding: 0.75rem;
+        border: 1px solid #ddd;
+        border-radius: 0.375rem;
+        font-size: 1rem;
+      }
+
+      #efa-form button[type="submit"] {
+        background-color: #2563eb;
+        color: white;
+        padding: 0.75rem 1.5rem;
+        border-radius: 0.375rem;
+        border: none;
+        cursor: pointer;
+        font-weight: 600;
+        font-size: 1rem;
+        transition: background-color 0.2s ease;
+      }
+
+      #efa-form button[type="submit"]:hover {
+        background-color: #1d4ed8;
+      }
+
+      #plane-lines {
+        pointer-events: auto; /* allow hover events to reach lines */
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1; /* keep behind entries visually */
+      }
+
+      .plane-entry {
+        pointer-events: none; /* entries don’t block hover */
+        z-index: 10;
+      }
+
+      .plane-entry * {
+        pointer-events: auto; /* allow interacting with text, checkbox, etc */
+      }
+
+      /* Sidebar styles */
+      #plane-sidebar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 280px;
+        height: 100%;
+        background: white;
+        border-right: 1px solid var(--border);
+        z-index: 20;
+        padding: 15px;
+        overflow-y: auto;
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+      }
+
+      #plane-content {
+        position: absolute;
+        top: 0;
+        left: 280px;
+        right: 0;
+        bottom: 0;
+        overflow: hidden;
+      }
+
+      #plane-sidebar h3 {
+        margin-bottom: 15px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid var(--border);
+        color: var(--primary);
+      }
+
+      #narrative-list {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .narrative-list-item {
+        display: flex;
+        align-items: center;
+        padding: 8px;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.2s;
+      }
+
+      .narrative-list-item:hover {
+        background-color: var(--light-gray);
+      }
+
+      .narrative-list-item input[type="checkbox"] {
+        margin-right: 10px;
+      }
+
+      .narrative-list-name {
+        font-size: 14px;
+        flex-grow: 1;
+      }
+
+      /* Toggle sidebar button */
+      #toggle-sidebar {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        z-index: 30;
+        padding: 8px 12px;
+        background: var(--primary);
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 14px;
+      }
+
+      .plane-tag.highlight {
+        background-color: #ffd54f; /* yellow highlight */
+        border: 1px solid #f39c12;
+        font-weight: 600;
+      }
+
+      .plane-line.highlight {
+        stroke: #f39c12 !important; /* orange highlight */
+        stroke-width: 5 !important; /* make them stand out */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <button class="back-button" onclick="location.href='efa.html'">
+        ← Back
+      </button>
+      <header>
+        <h1>EFA Creator</h1>
+        <p>
+          Upload a JSON file with tagged narratives and view them in table or
+          free plane view. Select narratives to create an EFA.
+        </p>
+      </header>
+
+      <div class="upload-section">
+        <input type="file" id="json-upload" accept=".json" />
+        <button id="load-json-btn" class="btn">Load JSON</button>
+      </div>
+
+      <div class="narratives-table">
+        <table id="narrative-table" style="display: none">
+          <thead>
+            <tr>
+              <th>Select</th>
+              <th>Name</th>
+              <th>Context</th>
+              <th>Tags</th>
+            </tr>
+          </thead>
+          <tbody id="table-body"></tbody>
+        </table>
+
+        <div id="free-plane-container">
+          <!-- Sidebar for narrative selection -->
+          <div id="plane-sidebar" style="display: none">
+            <h3>Select Narratives</h3>
+            <h1><input type="checkbox" id="select-all-plane" /> Select All</h1>
+            <div id="narrative-list"></div>
+          </div>
+
+          <!-- Content area for plane entries -->
+          <div id="plane-content">
+            <svg
+              id="plane-lines"
+              style="
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                pointer-events: none;
+              "
+            ></svg>
+          </div>
+          <button id="toggle-sidebar" class="btn" style="display: none">
+            ☰ Toggle Sidebar
+          </button>
+        </div>
+
+        <div
+          class="table-footer"
+          id="efa-btn-container"
+          style="display: none; margin-top: 20px"
+        >
+          <div class="view-toggle">
+            <button id="toggle-view" class="btn">
+              Switch to Free Plane View
+            </button>
+            <button id="reset-view" class="btn" style="display: none">
+              Reset Plane Positions
+            </button>
+            <button id="toggle-lines-btn" class="btn">Hide Lines</button>
+          </div>
+          <button id="create-efa-btn" class="btn primary">
+            Create EFA from Selection
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Overlay -->
+    <div id="modal-overlay"></div>
+
+    <!-- EFA Modal -->
+    <div id="efa-modal">
+      <button id="modal-close-btn">✕</button>
+      <h2>Create EFA</h2>
+
+      <div id="selected-narratives"></div>
+
+      <form id="efa-form">
+        <input
+          type="text"
+          name="efa-id"
+          placeholder="EFA ID"
+          class="w-full border p-2 rounded"
+          style="margin-bottom: 0.5rem"
+          required
+        />
+        <input
+          type="text"
+          name="efa-title"
+          placeholder="EFA Title"
+          class="w-full border p-2 rounded"
+          style="margin-bottom: 0.5rem"
+          required
+        />
+        <textarea
+          name="efa-description"
+          placeholder="Description"
+          class="w-full border p-2 rounded"
+          required
+        ></textarea>
+
+        <div class="core-values-section" style="margin-top: 1rem">
+          <label
+            ><strong>Core Ethical Values</strong> (select one or more):</label
+          >
+          <div id="coreValuesContainer" class="checkbox-grid"></div>
+        </div>
+
+        <hr />
+
+        <div id="criteria-section">
+          <h3>Testable Criteria</h3>
+          <div id="criteria-list"></div>
+          <button
+            type="button"
+            id="add-criteria-btn"
+            style="
+              margin-top: 0.5rem;
+              margin-bottom: 0.5rem;
+              padding: 0.4rem 1rem;
+              background-color: #eee;
+              border-radius: 4px;
+              cursor: pointer;
+              border: 1px solid #ccc;
+            "
+          >
+            + Add Criterion
+          </button>
+        </div>
+
+        <input
+          type="text"
+          name="efa-weight"
+          placeholder="Weight"
+          class="w-full border p-2 rounded"
+          style="margin-bottom: 0.5rem"
+        />
+        <input
+          type="text"
+          name="efa-priority"
+          placeholder="Priority"
+          class="w-full border p-2 rounded"
+          style="margin-bottom: 0.5rem"
+        />
+
+        <button
+          type="submit"
+          class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+        >
+          Save EFA
+        </button>
+      </form>
+    </div>
+
+    <script>
+      let jsonData = [];
+      let planeEntries = [];
+      let selectedItems = [];
+      let currentView = "table"; // 'table' or 'plane'
+      let linesVisible = true; // Track line visibility state
+      let planeVisibility = []; // Track which narratives are visible in plane
+      let planePositions = {}; // Track positions of plane entries
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const fileInput = document.getElementById("json-upload");
+        const loadBtn = document.getElementById("load-json-btn");
+        const efaBtn = document.getElementById("create-efa-btn");
+        const table = document.getElementById("narrative-table");
+        const tbody = document.getElementById("table-body");
+        const efaBtnContainer = document.getElementById("efa-btn-container");
+        const modal = document.getElementById("efa-modal");
+        const modalOverlay = document.getElementById("modal-overlay");
+        const modalCloseBtn = document.getElementById("modal-close-btn");
+        const modalForm = document.getElementById("efa-form");
+        const selectedNarrativesContainer = document.getElementById(
+          "selected-narratives"
+        );
+        const addCriteriaBtn = document.getElementById("add-criteria-btn");
+        const criteriaList = document.getElementById("criteria-list");
+        const toggleViewBtn = document.getElementById("toggle-view");
+        const resetViewBtn = document.getElementById("reset-view");
+        const planeContainer = document.getElementById("free-plane-container");
+        const planeContent = document.getElementById("plane-content");
+        const planeSidebar = document.getElementById("plane-sidebar");
+        const narrativeList = document.getElementById("narrative-list");
+        const toggleSidebarBtn = document.getElementById("toggle-sidebar");
+
+        // Initialize core values
+        const valueOptions = [
+          "Privacy",
+          "Transparency",
+          "Accountability",
+          "Autonomy",
+          "Safety",
+          "Trust",
+          "Dignity",
+          "Reliability",
+          "Accessibility",
+          "Fairness",
+          "Inclusiveness",
+          "Authenticity",
+          "Beneficence",
+          "Creativity",
+          "Diversity",
+          "Growth",
+          "Empowerment",
+          "Happiness",
+          "Health",
+          "Honesty",
+          "Justice",
+          "Participation",
+          "Respect",
+          "Support /",
+          "Sustainability",
+          "Non-maleficence",
+        ];
+
+        const coreValuesContainer = document.getElementById(
+          "coreValuesContainer"
+        );
+        coreValuesContainer.classList.add("checkbox-grid");
+
+        valueOptions.forEach((value) => {
+          const label = document.createElement("label");
+          const checkbox = document.createElement("input");
+          checkbox.type = "checkbox";
+          checkbox.name = "efa-core-values";
+          checkbox.value = value;
+          label.appendChild(checkbox);
+          label.appendChild(document.createTextNode(value));
+          coreValuesContainer.appendChild(label);
+        });
+
+        // Toggle sidebar button
+        toggleSidebarBtn.addEventListener("click", () => {
+          if (planeSidebar.style.display === "none") {
+            planeSidebar.style.display = "block";
+            toggleSidebarBtn.textContent = "☰ Hide Sidebar";
+          } else {
+            planeSidebar.style.display = "none";
+            toggleSidebarBtn.textContent = "☰ Show Sidebar";
+          }
+        });
+
+        // Load JSON button
+        loadBtn.addEventListener("click", () => {
+          const file = fileInput.files[0];
+          if (!file) {
+            alert("Please select a file.");
+            return;
+          }
+
+          const reader = new FileReader();
+          reader.onload = function (e) {
+            try {
+              jsonData = JSON.parse(e.target.result);
+              if (!Array.isArray(jsonData)) {
+                throw new Error("JSON must be an array.");
+              }
+
+              tbody.innerHTML = "";
+              selectedItems = [];
+
+              jsonData.forEach((narrative, index) => {
+                const row = createTableRow(narrative, index);
+                tbody.appendChild(row);
+              });
+
+              table.style.display = "table";
+              planeContainer.style.display = "none";
+              efaBtnContainer.style.display = "flex";
+
+              // Initialize plane visibility to false for all
+              planeVisibility = new Array(jsonData.length).fill(false);
+              renderSidebar();
+            } catch (err) {
+              alert("Error parsing JSON: " + err.message);
+            }
+          };
+
+          reader.readAsText(file);
+        });
+
+        // Toggle view button
+        toggleViewBtn.addEventListener("click", () => {
+          if (currentView === "table") {
+            // Switch to free plane view
+            currentView = "plane";
+            table.style.display = "none";
+            planeContainer.style.display = "block";
+            toggleViewBtn.textContent = "Switch to Table View";
+            resetViewBtn.style.display = "inline-block";
+            toggleSidebarBtn.style.display = "block";
+            planeSidebar.style.display = "block";
+            renderPlaneView();
+          } else {
+            // Switch to table view
+            currentView = "table";
+            table.style.display = "table";
+            planeContainer.style.display = "none";
+            toggleViewBtn.textContent = "Switch to Free Plane View";
+            resetViewBtn.style.display = "none";
+            toggleSidebarBtn.style.display = "none";
+          }
+        });
+
+        // Reset view button
+        resetViewBtn.addEventListener("click", renderPlaneView);
+
+        // Create EFA button
+        efaBtn.addEventListener("click", async () => {
+          const checkboxes =
+            currentView === "table"
+              ? document.querySelectorAll(".select-narrative:checked")
+              : document.querySelectorAll(
+                  "#plane-content .plane-entry input[type='checkbox']:checked"
+                );
+
+          const selectedIndexes = Array.from(checkboxes).map((cb) =>
+            parseInt(cb.dataset.index)
+          );
+          const selectedNarratives = selectedIndexes.map(
+            (index) => jsonData[index]
+          );
+
+          if (selectedNarratives.length === 0) {
+            alert("Please select at least one narrative.");
+            return;
+          }
+
+          modal.style.display = "block";
+          modalOverlay.style.display = "block";
+          modalForm.dataset.selectedIndexes = JSON.stringify(selectedIndexes);
+
+          selectedNarrativesContainer.innerHTML =
+            '<div class="loading">Loading narrative content...</div>';
+
+          try {
+            const narrativeContents = await Promise.all(
+              selectedNarratives.map(async (narrative) => {
+                try {
+                  const response = await fetch(
+                    `data/narratives/${narrative.name}.txt`
+                  );
+                  if (!response.ok) {
+                    throw new Error(`File not found: ${narrative.name}.txt`);
+                  }
+                  return await response.text();
+                } catch (error) {
+                  console.error(error);
+                  return `Error loading narrative content: ${
+                    error.message
+                  }\n\nJSON Context: ${narrative.context || "No context"}`;
+                }
+              })
+            );
+
+            selectedNarrativesContainer.innerHTML = selectedNarratives
+              .map((n, i) => {
+                return `
+<div class="narrative-full">
+<h3>${n.name || "Untitled"}</h3>
+<div class="narrative-content">${narrativeContents[i]}</div>
+</div>
+`;
+              })
+              .join("<hr>");
+          } catch (error) {
+            console.error("Error loading narratives:", error);
+            selectedNarrativesContainer.innerHTML = `<div class="error">Error loading narrative content: ${error.message}</div>`;
+          }
+        });
+
+        // Modal close buttons
+        modalCloseBtn.addEventListener("click", closeModal);
+        modalOverlay.addEventListener("click", closeModal);
+
+        function closeModal() {
+          modal.style.display = "none";
+          modalOverlay.style.display = "none";
+        }
+
+        // Add criteria button
+        addCriteriaBtn.addEventListener("click", () => {
+          const container = document.createElement("div");
+          container.classList.add("criteria-entry");
+
+          container.innerHTML = `
+<label>Requirement Type:
+<select name="requirement-type">
+<option value="must">Must do</option>
+<option value="should">Should do</option>
+<option value="must-not">Must not do</option>
+</select>
+</label>
+<label>Description:<input type="text" name="criteria-description" required></label>
+<label>How to test:<input type="text" name="criteria-method" required></label>
+<label>Status:
+<select name="criteria-status">
+<option value="not-tested">Not tested</option>
+<option value="passed">Passed</option>
+<option value="failed">Failed</option>
+</select>
+</label>
+<hr>
+`;
+
+          criteriaList.appendChild(container);
+        });
+
+        // Form submission
+        modalForm.addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          const coreValues = Array.from(
+            modalForm.querySelectorAll("input[name='efa-core-values']:checked")
+          ).map((el) => el.value);
+
+          const criteriaEntries = Array.from(
+            criteriaList.querySelectorAll(".criteria-entry")
+          );
+          const testableCriteria = criteriaEntries.map((entry) => {
+            return {
+              type: entry.querySelector("select[name='requirement-type']")
+                .value,
+              description: entry.querySelector(
+                "input[name='criteria-description']"
+              ).value,
+              method: entry.querySelector("input[name='criteria-method']")
+                .value,
+              status: entry.querySelector("select[name='criteria-status']")
+                .value,
+            };
+          });
+
+          const efa = {
+            id: modalForm["efa-id"].value,
+            title: modalForm["efa-title"].value,
+            description: modalForm["efa-description"].value,
+            coreValues,
+            testableCriteria,
+            weight: modalForm["efa-weight"].value,
+            priority: modalForm["efa-priority"].value,
+            linkedNarratives: JSON.parse(modalForm.dataset.selectedIndexes).map(
+              (i) => jsonData[i]
+            ),
+          };
+
+          console.log("Created EFA:", efa);
+          alert(
+            `EFA created successfully (check console for JSON).\n${JSON.stringify(
+              efa,
+              null,
+              2
+            )}`
+          );
+
+          const blob = new Blob([JSON.stringify(efa, null, 2)], {
+            type: "application/json",
+          });
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement("a");
+          a.href = url;
+          a.download = `${efa.id || "efa"}.json`;
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+          URL.revokeObjectURL(url);
+
+          modalForm.reset();
+          criteriaList.innerHTML = "";
+          selectedNarrativesContainer.innerHTML = "";
+          const checkedValues = coreValuesContainer.querySelectorAll(
+            "input[name='efa-core-values']"
+          );
+          checkedValues.forEach((cb) => (cb.checked = false));
+          closeModal();
+        });
+
+        function createTableRow(narrative, index) {
+          const row = document.createElement("tr");
+
+          const selectCell = document.createElement("td");
+          selectCell.classList.add("select-cell");
+
+          const checkbox = document.createElement("input");
+          checkbox.type = "checkbox";
+          checkbox.classList.add("select-narrative");
+          checkbox.dataset.index = index;
+          checkbox.addEventListener("change", () => toggleItemSelection(index));
+
+          selectCell.appendChild(checkbox);
+          row.appendChild(selectCell);
+
+          const nameCell = document.createElement("td");
+          nameCell.textContent = narrative.name || "—";
+          row.appendChild(nameCell);
+
+          const contextCell = document.createElement("td");
+          contextCell.textContent = narrative.context || "—";
+          row.appendChild(contextCell);
+
+          const tagsCell = document.createElement("td");
+          if (Array.isArray(narrative.tags)) {
+            tagsCell.textContent = narrative.tags
+              .map((tag) => {
+                let type;
+                if (tag.weight === 3) type = "SI";
+                else if (tag.weight === 2) type = "I";
+                else if (tag.weight === 1) type = "R";
+                else type = "?";
+                return `${tag.name} (${type})`;
+              })
+              .join(", ");
+          } else {
+            tagsCell.textContent = "—";
+          }
+          row.appendChild(tagsCell);
+
+          return row;
+        }
+
+        function renderSidebar() {
+          narrativeList.innerHTML = "";
+          jsonData.forEach((narrative, index) => {
+            const listItem = document.createElement("div");
+            listItem.className = "narrative-list-item";
+            listItem.innerHTML = `
+<input type="checkbox" id="narrative-${index}" data-index="${index}" ${
+              planeVisibility[index] ? "checked" : ""
+            }>
+<label for="narrative-${index}" class="narrative-list-name">${
+              narrative.name || "Untitled"
+            }</label>
+`;
+            narrativeList.appendChild(listItem);
+
+            const checkbox = listItem.querySelector('input[type="checkbox"]');
+            checkbox.addEventListener("change", (e) => {
+              planeVisibility[index] = e.target.checked;
+              if (currentView === "plane") {
+                renderPlaneView();
+              }
+            });
+          });
+        }
+
+        function toggleItemSelection(index) {
+          const itemIndex = selectedItems.indexOf(index);
+          if (itemIndex === -1) {
+            selectedItems.push(index);
+          } else {
+            selectedItems.splice(itemIndex, 1);
+          }
+
+          updateSelectionState();
+        }
+
+        function updateSelectionState() {
+          document.querySelectorAll("#table-body tr").forEach((row) => {
+            const checkbox = row.querySelector("input[type='checkbox']");
+            const index = parseInt(checkbox.dataset.index);
+            checkbox.checked = selectedItems.includes(index);
+          });
+
+          document.querySelectorAll(".plane-entry").forEach((entry) => {
+            const checkbox = entry.querySelector("input[type='checkbox']");
+            const index = parseInt(checkbox.dataset.index);
+            checkbox.checked = selectedItems.includes(index);
+          });
+        }
+
+        function renderPlaneView() {
+          planeContent.innerHTML = "";
+          planeEntries = [];
+
+          if (!jsonData.length) return;
+          let svg = document.createElementNS(
+            "http://www.w3.org/2000/svg",
+            "svg"
+          );
+          svg.id = "plane-lines";
+          svg.style.position = "absolute";
+          svg.style.top = "0";
+          svg.style.left = "0";
+          svg.style.width = "100%";
+          svg.style.height = "100%";
+          svg.style.pointerEvents = "none";
+          planeContent.appendChild(svg);
+
+          // Set initial line visibility
+          svg.style.display = linesVisible ? "block" : "none";
+
+          // Initialize button text
+          toggleLinesBtn.textContent = linesVisible
+            ? "Hide Lines"
+            : "Show Lines";
+
+          const cols = 4;
+          const entryWidth = 300;
+          const horizontalSpacing = 50;
+          const verticalSpacing = 150;
+
+          const containerWidth = planeContent.offsetWidth;
+          const gridWidth =
+            cols * (entryWidth + horizontalSpacing) - horizontalSpacing;
+          const startX = Math.max(0, (containerWidth - gridWidth) / 2);
+          let startY = 50;
+
+          // Keep track of visible entries
+          let visibleCount = 0;
+
+          jsonData.forEach((narrative, index) => {
+            if (!planeVisibility[index]) return; // Skip if not visible
+
+            const entry = document.createElement("div");
+            entry.className = "plane-entry";
+
+            const col = visibleCount % cols;
+            const row = Math.floor(visibleCount / cols);
+
+            const effectiveRow = row % 5;
+
+            let left = startX + col * (entryWidth + horizontalSpacing);
+            let top = startY + effectiveRow * verticalSpacing;
+
+            // Use saved position if exists
+            if (planePositions[index]) {
+              left = planePositions[index].left;
+              top = planePositions[index].top;
+            }
+
+            entry.style.left = `${left}px`;
+            entry.style.top = `${top}px`;
+            entry.style.width = `${entryWidth}px`;
+
+            entry.innerHTML = `
+<div class="plane-entry-header">
+<input type="checkbox" class="select-narrative" data-index="${index}">
+<div class="plane-entry-name">${narrative.name || "Untitled"}</div>
+</div>
+<div class="plane-entry-content">${
+              narrative.context || "No context provided"
+            }</div>
+<div class="plane-entry-tags">
+${
+  Array.isArray(narrative.tags)
+    ? narrative.tags
+        .map((tag) => {
+          let type =
+            tag.weight === 3
+              ? "SI"
+              : tag.weight === 2
+              ? "I"
+              : tag.weight === 1
+              ? "R"
+              : "?";
+          return `<span class="plane-tag">${tag.name} (${type})</span>`;
+        })
+        .join("")
+    : ""
+}
+</div>
+`;
+
+            planeContent.appendChild(entry);
+            planeEntries.push(entry);
+
+            // Make draggable
+            makeDraggable(entry, index);
+
+            // Add checkbox event listener
+            const checkbox = entry.querySelector("input[type='checkbox']");
+            checkbox.addEventListener("change", () =>
+              toggleItemSelection(index)
+            );
+
+            visibleCount++;
+          });
+
+          drawTagLines(); // Draw lines after rendering
+          enableTagHighlighting();
+        }
+
+        const toggleLinesBtn = document.getElementById("toggle-lines-btn");
+        toggleLinesBtn.addEventListener("click", function () {
+          linesVisible = !linesVisible;
+          const svg = document.getElementById("plane-lines");
+          if (svg) {
+            svg.style.display = linesVisible ? "block" : "none";
+          }
+          this.textContent = linesVisible ? "Hide Lines" : "Show Lines";
+        });
+
+        function drawTagLines() {
+          const svg = document.getElementById("plane-lines");
+          if (!svg) return;
+          svg.innerHTML = ""; // Clear previous lines
+
+          const tagMap = {};
+          const connectionMap = {};
+
+          planeEntries.forEach((entry) => {
+            const containerRect = planeContent.getBoundingClientRect();
+            const narrativeIndex = parseInt(
+              entry.querySelector('input[type="checkbox"]').dataset.index
+            );
+            const narrative = jsonData[narrativeIndex];
+
+            if (!Array.isArray(narrative.tags)) return;
+
+            narrative.tags.forEach((tag) => {
+              if (tag.weight < 2) return;
+
+              const tagEl = Array.from(
+                entry.querySelectorAll(".plane-tag")
+              ).find((el) => el.textContent.startsWith(tag.name));
+              if (!tagEl) return;
+
+              const tagRect = tagEl.getBoundingClientRect();
+              const x = tagRect.left - containerRect.left + tagRect.width / 2;
+              const y = tagRect.top - containerRect.top + tagRect.height / 2;
+
+              if (!tagMap[tag.name]) tagMap[tag.name] = [];
+              tagMap[tag.name].push({
+                x,
+                y,
+                weight: tag.weight,
+                narrativeName: narrative.name || "Untitled",
+              });
+            });
+
+            const narrativeName = narrative.name || "Untitled";
+            connectionMap[narrativeName] = connectionMap[narrativeName] || {};
+          });
+
+          // Tooltip
+          let tooltip = document.getElementById("line-tooltip");
+          if (!tooltip) {
+            tooltip = document.createElement("div");
+            tooltip.id = "line-tooltip";
+            tooltip.style.position = "absolute";
+            tooltip.style.background = "rgba(0,0,0,0.8)";
+            tooltip.style.color = "white";
+            tooltip.style.padding = "4px 8px";
+            tooltip.style.borderRadius = "4px";
+            tooltip.style.fontSize = "12px";
+            tooltip.style.pointerEvents = "none";
+            tooltip.style.display = "none";
+            tooltip.style.zIndex = 1000;
+            document.body.appendChild(tooltip);
+          }
+
+          // First pass: build connection map and calculate scores
+          Object.entries(tagMap).forEach(([tagName, points]) => {
+            for (let i = 0; i < points.length; i++) {
+              for (let j = i + 1; j < points.length; j++) {
+                if (points[i].weight >= 2 && points[j].weight >= 2) {
+                  const key1 = points[i].narrativeName;
+                  const key2 = points[j].narrativeName;
+
+                  if (
+                    !connectionMap[key1][key2] &&
+                    !connectionMap[key2][key1]
+                  ) {
+                    connectionMap[key1][key2] = {
+                      count: 0,
+                      tags: [],
+                      points: [],
+                      score: 0,
+                    };
+                  }
+
+                  const connection =
+                    connectionMap[key1][key2] || connectionMap[key2][key1];
+                  connection.count++;
+                  connection.tags.push(tagName);
+                  connection.points.push({
+                    x1: points[i].x,
+                    y1: points[i].y,
+                    x2: points[j].x,
+                    y2: points[j].y,
+                    weight1: points[i].weight,
+                    weight2: points[j].weight,
+                  });
+
+                  connection.score += points[i].weight + points[j].weight;
+                }
+              }
+            }
+          });
+
+          // Determine min and max score for dynamic scaling
+          let minScore = Infinity;
+          let maxScore = -Infinity;
+          Object.values(connectionMap).forEach((connections) => {
+            Object.values(connections).forEach((conn) => {
+              if (conn.score < minScore) minScore = conn.score;
+              if (conn.score > maxScore) maxScore = conn.score;
+            });
+          });
+
+          const minThickness = 2;
+          const maxThickness = 15;
+
+          function scoreToColor(score) {
+            const ratio = (score - minScore) / (maxScore - minScore || 1);
+            const blue = Math.round(255 * ratio); // 0 → 255
+            const transparency = 0.7 * ratio;
+            return `rgba(0, 0, ${blue}, ${transparency * transparency})`;
+          }
+
+          // Second pass: draw lines with dynamic thickness and color
+          Object.values(connectionMap).forEach((connections) => {
+            Object.entries(connections).forEach(([targetName, connection]) => {
+              connection.points.forEach((point) => {
+                const line = document.createElementNS(
+                  "http://www.w3.org/2000/svg",
+                  "line"
+                );
+                line.setAttribute("x1", point.x1);
+                line.setAttribute("y1", point.y1);
+                line.setAttribute("x2", point.x2);
+                line.setAttribute("y2", point.y2);
+                line.setAttribute("class", "plane-line");
+                line.dataset.tags = connection.tags.join(",");
+                svg.appendChild(line);
+
+                const scoreRatio =
+                  (connection.score - minScore) / (maxScore - minScore || 1);
+                const strokeWidth =
+                  minThickness + scoreRatio * (maxThickness - minThickness);
+                const strokeColor = scoreToColor(connection.score);
+
+                line.setAttribute("stroke", strokeColor);
+                line.setAttribute("stroke-width", strokeWidth);
+                line.style.pointerEvents = "stroke";
+
+                line.addEventListener("mouseenter", (e) => {
+                  tooltip.textContent = `Shared tags: ${connection.tags.join(
+                    ", "
+                  )} (${connection.count} connections), Score: ${
+                    connection.score
+                  }`;
+                  tooltip.style.display = "block";
+                });
+                line.addEventListener("mousemove", (e) => {
+                  tooltip.style.left = e.pageX + 10 + "px";
+                  tooltip.style.top = e.pageY + 10 + "px";
+                });
+                line.addEventListener("mouseleave", () => {
+                  tooltip.style.display = "none";
+                });
+
+                svg.appendChild(line);
+              });
+            });
+          });
+        }
+
+        function makeDraggable(element, index) {
+          let pos1 = 0,
+            pos2 = 0,
+            pos3 = 0,
+            pos4 = 0;
+          element.onmousedown = dragMouseDown;
+
+          function dragMouseDown(e) {
+            e = e || window.event;
+            e.preventDefault();
+            pos3 = e.clientX;
+            pos4 = e.clientY;
+            document.onmouseup = closeDragElement;
+            document.onmousemove = elementDrag;
+          }
+
+          function elementDrag(e) {
+            e = e || window.event;
+            e.preventDefault();
+            pos1 = pos3 - e.clientX;
+            pos2 = pos4 - e.clientY;
+            pos3 = e.clientX;
+            pos4 = e.clientY;
+            const newTop = element.offsetTop - pos2;
+            const newLeft = element.offsetLeft - pos1;
+            element.style.top = `${newTop}px`;
+            element.style.left = `${newLeft}px`;
+            // Save position
+            planePositions[index] = { top: newTop, left: newLeft };
+            drawTagLines(); // update lines while dragging
+          }
+
+          function closeDragElement() {
+            document.onmouseup = null;
+            document.onmousemove = null;
+          }
+        }
+
+        // --- Select All in Plane Sidebar ---
+        const selectAllPlane = document.getElementById("select-all-plane");
+        if (selectAllPlane) {
+          selectAllPlane.addEventListener("change", (e) => {
+            const checkboxes = document.querySelectorAll(
+              "#narrative-list input[type='checkbox']"
+            );
+            checkboxes.forEach((cb) => {
+              cb.checked = e.target.checked;
+              const index = parseInt(cb.dataset.index);
+              planeVisibility[index] = e.target.checked;
+            });
+            renderPlaneView();
+          });
+        }
+        function enableTagHighlighting() {
+          const tags = document.querySelectorAll(".plane-tag");
+          tags.forEach((tag) => {
+            tag.addEventListener("click", (e) => {
+              const clickedTagText = tag.textContent.split(" (")[0]; // just the name
+              const allTags = document.querySelectorAll(".plane-tag");
+
+              // If this tag is already active → clear highlights
+              if (tag.classList.contains("highlight")) {
+                allTags.forEach((t) => t.classList.remove("highlight"));
+              } else {
+                // Clear any previous highlights
+                allTags.forEach((t) => t.classList.remove("highlight"));
+
+                // Highlight all tags with the same name
+                allTags.forEach((t) => {
+                  if (t.textContent.startsWith(clickedTagText)) {
+                    t.classList.add("highlight");
+                  }
+                });
+              }
+            });
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

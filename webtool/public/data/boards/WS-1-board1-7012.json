@@ -1,0 +1,50 @@
+{
+  "workshopDate": "2025-07-09",
+  "sourceBoardID": "WS-1-board1",
+  "storyParticipantNumber": "13",
+  "iWant": "to know the limitation and strengths of the deployed chatbot",
+  "soThat": "I am able to make informed decisions on how to use it and what to do with the information it provides",
+  "because": "I know that chatbot interfaces can look very similar while providing hugely differing capabilities wrt trustfulness, reliability, hope, usefulness",
+  "criteriaParticipantNumbers": "9,13,14,19",
+  "desirable": "Provide useful information about limitation and strengths at multiple levels of expertise and in multiple formats (video, texts)",
+  "acceptable": "less formats",
+  "dealBreakers": "information missing or not comprehensible / to the varying levels of expertise / stakeholder",
+  "comment": "desirable could also be acceptable",
+  "values": [
+    {
+      "participantNumber": "9",
+      "value": "Accessibility",
+      "explanation": "being required to inform oneself is a barrier",
+      "category": "hinder",
+      "importance": "Important"
+    },
+    {
+      "participantNumber": "13",
+      "value": "Empowerment",
+      "explanation": "enables to reflect what chatbot perceives",
+      "category": "promote",
+      "importance": "Super Important"
+    },
+    {
+      "participantNumber": "14",
+      "value": "Trust",
+      "explanation": "following goal from transparency",
+      "category": "promote",
+      "importance": "Super Important"
+    },
+    {
+      "participantNumber": "19",
+      "value": "Accountability",
+      "explanation": "transparency is one way of reaching accountability",
+      "category": "promote",
+      "importance": "Important"
+    },
+    {
+      "participantNumber": "9",
+      "value": "Transparency",
+      "explanation": "that's what it's about, main claim",
+      "category": "promote",
+      "importance": "Super Important"
+    }
+  ]
+}

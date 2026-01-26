@@ -1,0 +1,42 @@
+Narrative ID: narrative-ws2b3
+
+
+Core Concern
+Job seekers, particularly those from marginalized backgrounds, are concerned about the company culture and environment they might enter. They wish to avoid hostile work environments that may be at odds with their personal beliefs and values.
+
+
+Raised By
+Immigrants and individuals with left-wing beliefs who are actively seeking employment.
+
+
+Context
+Job seekers who are immigrants or hold specific political beliefs find themselves in a situation where they need to assess potential work environments before applying. They interact with a system that provides insights into company cultures, helping them determine if the environment aligns with their values and beliefs. This interaction is crucial for ensuring that they do not end up in a hostile work environment that could negatively impact their daily lives.
+
+
+Stakeholder Expectations
+Job seekers want the system to provide comprehensive and reliable information about company cultures. This includes whether the environment is open-minded, conservative, exploitative, or hierarchical. The system should enable them to make informed decisions about where they would feel comfortable working.
+
+
+Testable Boundaries
+Acceptable: The system should present incidents or 'red flags' if there are any, ensuring job seekers are aware of potential issues.
+Ideal: The system should present information along with sources so that job seekers can make informed decisions.
+Deal-Breaker: The system should not actively promote unethical companies or decide whether a company is good or bad for the job seeker.
+
+
+Value Relationships
+Addressing this promotes: Empowerment, as job seekers have the information to make informed decisions. Additionally, Transparency is promoted because job seekers receive all sources the system uses for decision-making. Health is promoted because understanding the company culture can prevent negative mental health impacts due to employee mistreatment. Participation is promoted as the data used comes from employees' participation in reviewing and reporting companies/cases. Honesty is crucial as the data source has to be honest. Growth is promoted as more information helps job seekers understand the company better.
+Addressing this violates: Reliability, because the less information available, the more job seekers have to rely on the system. Creativity is hindered as job seekers merely go through a list of sources without deeper engagement.
+
+
+Primary Values:
+Empowerment is super important because it ensures that job seekers have the information needed to make informed decisions, which directly impacts their well-being and job satisfaction. Transparency is also super important as it ensures that all sources used by the system are available to job seekers, building trust and reliability. Reliability is super important because the lack of information forces job seekers to rely heavily on the system, which can lead to misinformed decisions if the system is not accurate.
+
+
+Supporting Values:
+Health is super important as it highlights the negative mental health impacts of working in a hostile environment, underscoring the importance of accurate information. Participation is important as it ensures that the data used is from employee reviews, making it more credible. Honesty is important as it ensures the data source is reliable. Growth is important as it emphasizes the benefit of more information in understanding the company culture better.
+
+Metadata
+Source Board: WS-2-board3
+Workshop Date: 2025-07-10
+Tech Version: In Design Phase
+Category: Interaction, Data

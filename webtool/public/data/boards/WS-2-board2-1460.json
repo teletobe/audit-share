@@ -1,0 +1,71 @@
+{
+  "workshopDate": "2025-07-10",
+  "sourceBoardID": "WS-2-board2",
+  "storyParticipantNumber": "23",
+  "iWant": "it to be non-discriminatory based on people's characteristics they cannot or only hardly change (i.e.. inner-dimension wheel of privilege)",
+  "soThat": "people do not feel discriminated or excluded when using the technology",
+  "because": "I know how it feels to be excluded and because I care about other people",
+  "criteriaParticipantNumbers": "15,21,23",
+  "desirable": "- only use data and context people provide by themselves\n- do not create user profiles",
+  "acceptable": "mention existing biases",
+  "dealBreakers": "- using slurs\n- using identity aspects for jobs\n- asking personal questions",
+  "comment": "Respect and privacy placed close to each other.\n- Honesty and Transparency placed close to each other",
+  "values": [
+    {
+      "participantNumber": "15",
+      "value": "Accountability",
+      "explanation": "Who is accountable when a bias occurs?",
+      "category": "Unclear",
+      "importance": "Important"
+    },
+    {
+      "participantNumber": "21",
+      "value": "Respect",
+      "explanation": "the privacy of the user",
+      "category": "Promote",
+      "importance": "Super Important"
+    },
+    {
+      "participantNumber": "21",
+      "value": "Privacy",
+      "explanation": "your data should be handled very carefully, not distributed or made available (or even used for training?)",
+      "category": "Promote",
+      "importance": "Super Important"
+    },
+    {
+      "participantNumber": "23",
+      "value": "Honesty",
+      "explanation": "communicating about the different data gathered and decision made is important",
+      "category": "Promote",
+      "importance": "Important"
+    },
+    {
+      "participantNumber": "15",
+      "value": "Transparency",
+      "explanation": "to explain biases and where the output comes from",
+      "category": "Promote",
+      "importance": "Important"
+    },
+    {
+      "participantNumber": "21",
+      "value": "Health",
+      "explanation": "discrimination against others can cause health issues (both mental and physical)",
+      "category": "Promote",
+      "importance": "Super Important"
+    },
+    {
+      "participantNumber": "23",
+      "value": "Dignity",
+      "explanation": "People should be treated with dignity, hence no discrimination ",
+      "category": "Promote",
+      "importance": "Important"
+    },
+    {
+      "participantNumber": "15",
+      "value": "Justice",
+      "explanation": "because your background shouldn't influence your future possibilites",
+      "category": "Promote",
+      "importance": "Super Important"
+    }
+  ]
+}

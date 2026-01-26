@@ -1,0 +1,69 @@
+{
+  "narrative_1": {
+    "tag_1": 3,
+    "tag_2": 2,
+    "tag_3": 2,
+    "tag_4": 3,
+    "tag_5": 3,
+    "tag_6": 2,
+    "tag_7": 3,
+    "tag_8": 3
+  },
+  "narrative_2": {
+    "tag_2": 3,
+    "tag_9": 3,
+    "tag_10": 2,
+    "tag_11": 2,
+    "tag_12": 3,
+    "tag_3": 2,
+    "tag_13": 3,
+    "tag_14": 2
+  },
+  "narrative_3": {
+    "tag_3": 2,
+    "tag_1": 3,
+    "tag_11": 3,
+    "tag_15": 3,
+    "tag_7": 2,
+    "tag_10": 2,
+    "tag_16": 2
+  },
+  "narrative_4": {
+    "tag_2": 3,
+    "tag_14": 3,
+    "tag_17": 3,
+    "tag_18": 2,
+    "tag_19": 2,
+    "tag_4": 2
+  },
+  "narrative_5": {
+    "tag_20": 3,
+    "tag_21": 2,
+    "tag_22": 2,
+    "tag_9": 2,
+    "tag_23": 2
+  },
+  "narrative_6": {
+    "tag_11": 3,
+    "tag_14": 2,
+    "tag_4": 2,
+    "tag_1": 3,
+    "tag_6": 3
+  },
+  "narrative_7": {
+    "tag_16": 2,
+    "tag_1": 3,
+    "tag_21": 3,
+    "tag_8": 2,
+    "tag_11": 3,
+    "tag_9": 2
+  },
+  "narrative_8": {
+    "tag_14": 2,
+    "tag_19": 3,
+    "tag_18": 3,
+    "tag_15": 3,
+    "tag_4": 3,
+    "tag_20": 3
+  }
+}

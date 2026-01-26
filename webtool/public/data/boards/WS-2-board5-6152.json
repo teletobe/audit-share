@@ -1,0 +1,78 @@
+{
+  "workshopDate": "2025-07-10",
+  "sourceBoardID": "WS-2-board5",
+  "storyParticipantNumber": "29",
+  "iWant": "it to be able to suggest many different career paths and give me accurate descriptions of what they look like in real life - e.g. the daily life when I work as a xxx",
+  "soThat": "I don't get stereotypical career suggestions based on my gender/current education/hobbies, and end up pursuing a career that doesn't suit me later in life",
+  "because": "I am young and unsure about my interests and values, so I don't want to miss out on possibilities",
+  "criteriaParticipantNumbers": "1,2,29",
+  "desirable": "board recommendations not only based on existing job profiles/roles/stereotypes, that I can then narrow down myself",
+  "acceptable": "recommendations based on provided data, but also explains why options were included/excluded",
+  "dealBreakers": "excluding options based on current profile/background, demographic data",
+  "comment": "",
+  "values": [
+    {
+      "participantNumber": "1",
+      "value": "Inclusivity",
+      "explanation": "Job recommendations indifferent to background",
+      "category": "Promote",
+      "importance": "Super Important"
+    },
+    {
+      "participantNumber": "2",
+      "value": "Diversity",
+      "explanation": "enables non-biased job selection",
+      "category": "Promote",
+      "importance": "Super Important"
+    },
+    {
+      "participantNumber": "29",
+      "value": "Trust",
+      "explanation": "the chatbot requires a lot of trust",
+      "category": "Unclear",
+      "importance": "Super Important"
+    },
+    {
+      "participantNumber": "2",
+      "value": "Safety",
+      "explanation": "excludes job opportunities potentially threatening to financial safety",
+      "category": "Promote",
+      "importance": "Super Important"
+    },
+    {
+      "participantNumber": "2",
+      "value": "Happiness",
+      "explanation": "I'm able to make informed decisions",
+      "category": "Promote",
+      "importance": "Important"
+    },
+    {
+      "participantNumber": "1",
+      "value": "Autonomy",
+      "explanation": "you can decide whether to exclude a job offering",
+      "category": "Promote",
+      "importance": "Important"
+    },
+    {
+      "participantNumber": "2",
+      "value": "Support",
+      "explanation": "chat bot argues why jobs are excluded/included",
+      "category": "Promote",
+      "importance": "Important"
+    },
+    {
+      "participantNumber": "29",
+      "value": "Creativity",
+      "explanation": "I consider the options without the chatbot's intereferance relying on my own creativity",
+      "category": "Unclear",
+      "importance": "Important"
+    },
+    {
+      "participantNumber": "1",
+      "value": "Privacy",
+      "explanation": "You choose what information to give to the chatbot",
+      "category": "Promote",
+      "importance": "Important"
+    }
+  ]
+}

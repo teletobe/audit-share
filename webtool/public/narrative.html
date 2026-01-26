@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Narrative Constructor</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 800px;
+        margin: 1px auto;
+        padding: 20px;
+        text-align: center;
+      }
+
+      input[type="text"],
+      #downloadFileName {
+        width: 60%;
+        padding: 8px;
+        margin-bottom: 20px;
+      }
+
+      input[type="file"] {
+        margin-bottom: 20px;
+      }
+
+      /* Container to hold the two buttons side by side with a left border */
+      .button-group {
+        display: inline-flex;
+        align-items: center;
+        /* border-left: 1px solid #ccc; /* thin vertical line */
+        padding-left: 15px;
+        gap: 15px;
+        margin: 30px auto;
+        max-width: 480px; /* combined max width */
+      }
+
+      .button-group button {
+        display: inline-block; /* inline so they sit side-by-side */
+        margin: 0; /* reset margin for inline layout */
+        padding: 12px 24px;
+        font-size: 1.2rem;
+        background-color: #0077cc;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        max-width: 220px;
+        text-align: center;
+        transition: background-color 0.3s ease;
+      }
+
+      .button-group button:hover {
+        background-color: #0056b3;
+      }
+
+      /* Change main header color to same blue */
+      h1 {
+        color: #0077cc;
+      }
+
+      pre {
+        text-align: left;
+        background: #f9f9f9;
+        padding: 15px;
+        border: 1px solid #ccc;
+        overflow-x: auto;
+        white-space: pre-wrap; /* Enable word wrap */
+        word-wrap: break-word; /* Ensure long words are broken */
+      }
+
+      #generatedNarrative.hidden,
+      #manualNarrative.hidden {
+        display: none;
+      }
+
+      #generatedNarrative,
+      #manualNarrative {
+        white-space: pre-wrap;
+        text-align: left;
+        margin-top: 20px;
+        background: #f0f0f0;
+        padding: 15px;
+        display: none; /* Initially hidden */
+      }
+
+      #generatedNarrative,
+      #manualNarrative {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        padding: 20px;
+      }
+
+      #generatedNarrative h1,
+      #manualNarrative h1 {
+        font-size: 22px;
+      }
+
+      #generatedNarrative h2,
+      #manualNarrative h2 {
+        font-size: 20px;
+      }
+
+      #generatedNarrative h3,
+      #manualNarrative h3 {
+        font-size: 18px;
+      }
+
+      #generatedNarrative strong,
+      #manualNarrative strong {
+        font-weight: bold;
+      }
+
+      #templateContainer {
+        width: 100%;
+        height: 400px;
+        white-space: pre-wrap; /* Enable word wrap */
+        word-wrap: break-word; /* Ensure long words are broken */
+      }
+
+      .back-button {
+        display: block; /* makes the button take just needed width and on its own line */
+        margin: 40px auto; /* centers horizontally and adds vertical spacing */
+        padding: 8px 16px;
+        background-color: #888;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 1rem;
+        max-width: 200px; /* keeps the button from being too wide */
+        text-align: center;
+      }
+
+      .back-button:hover {
+        background-color: #555;
+      }
+    </style>
+  </head>
+
+  <body>
+    <button class="back-button" onclick="location.href='index.html'">
+      ← Back to Home
+    </button>
+    <h1>Narrative Constructor</h1>
+
+    <div class="button-group">
+      <button onclick="showLLMNarrativeCreation()">
+        LLM Narrative Creation
+      </button>
+      <button onclick="showManualNarrativeCreation()">
+        Manual Narrative Creation
+      </button>
+    </div>
+
+    <br /><br />
+
+    <div id="llmNarrativeSection" style="display: none">
+      <input
+        type="text"
+        id="apiKeyInput"
+        placeholder="Enter your Aqueduct API Key"
+      />
+      <br />
+      <input type="file" id="jsonFileInput" accept="application/JSON" />
+      <pre id="jsonDisplay">No file loaded yet.</pre>
+      <button id="turnNarrativeBtn" disabled>
+        💡 Turn This into a Narrative
+      </button>
+
+      <button id="downloadPdfBtn" disabled>Download as PDF</button>
+      <button id="downloadTxtBtn" disabled>Download as TXT</button>
+      <h2>Generated Narrative</h2>
+      <div id="generatedNarrative" class="hidden">Nothing generated yet.</div>
+    </div>
+
+    <div id="manualNarrativeSection" style="display: none">
+      <h2>Narrative Template</h2>
+      <textarea id="templateContainer" readonly>Loading template...</textarea>
+      <br />
+      <button onclick="toggleEdit()">Edit Template</button>
+      <input
+        type="text"
+        id="downloadFileName"
+        placeholder="Enter filename for download"
+      />
+      <button onclick="downloadTemplate()">
+        Download Manual Narrative as TXT
+      </button>
+    </div>
+
+    <script src="narrative.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+    <script>
+      function loadTemplate() {
+        fetch("narrative-template.txt")
+          .then((response) => response.text())
+          .then((data) => {
+            document.getElementById("templateContainer").value = data;
+          })
+          .catch((error) => {
+            console.error("Error loading the narrative template:", error);
+            document.getElementById("templateContainer").value =
+              "Error loading template.";
+          });
+      }
+
+      // loading the template when the page is fully loaded
+      window.onload = loadTemplate;
+
+      //  to toggle edit mode for the template
+      function toggleEdit() {
+        const templateContainer = document.getElementById("templateContainer");
+        templateContainer.readOnly = !templateContainer.readOnly;
+        templateContainer.focus();
+      }
+
+      // to download the template content as a text file
+      function downloadTemplate() {
+        const templateContent =
+          document.getElementById("templateContainer").value;
+        const fileName =
+          document.getElementById("downloadFileName").value ||
+          "narrative-template.txt";
+        const blob = new Blob([templateContent], { type: "text/plain" });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = fileName;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+      }
+
+      // Function to show LLM Narrative Creation section
+      function showLLMNarrativeCreation() {
+        document.getElementById("llmNarrativeSection").style.display = "block";
+        document.getElementById("manualNarrativeSection").style.display =
+          "none";
+      }
+
+      // Function to show Manual Narrative Creation section
+      function showManualNarrativeCreation() {
+        document.getElementById("llmNarrativeSection").style.display = "none";
+        document.getElementById("manualNarrativeSection").style.display =
+          "block";
+      }
+    </script>
+  </body>
+</html>

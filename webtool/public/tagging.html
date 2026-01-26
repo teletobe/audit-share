@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tagging - EFA Generator</title>
+    <link rel="stylesheet" href="efa.css" />
+  </head>
+  <body>
+    <div class="container">
+      <button class="back-button" onclick="location.href='efa.html'">
+        ← Back
+      </button>
+      <header>
+        <h1>Annotation Tagging</h1>
+        <p>Create EFAs from stakeholder narratives</p>
+      </header>
+
+      <div class="tabs">
+        <button class="tab-btn active" data-tab="manual">Manual Entry</button>
+        <button class="tab-btn" data-tab="automated">
+          Process by Uploading Narrative
+        </button>
+      </div>
+
+      <!-- Manual Entry -->
+      <div id="manual" class="tab-content active">
+        <h2>Add Narrative Manually</h2>
+        <form id="manual-form">
+          <div class="form-group">
+            <label for="name">Narrative Name:</label>
+            <input type="text" id="name" required />
+          </div>
+          <div class="form-group">
+            <label for="context">Core Context:</label>
+            <textarea id="context" rows="3" required></textarea>
+          </div>
+          <div class="form-group">
+            <label for="tags">Tags:</label>
+            <div class="tags-container" id="tags-container">
+              <div class="loading-tags">Loading tags...</div>
+            </div>
+            <div id="selected-tags" class="selected-tags"></div>
+          </div>
+          <button type="submit" class="btn">Add to Table</button>
+        </form>
+      </div>
+
+      <!-- Automated Upload -->
+      <div id="automated" class="tab-content">
+        <h2>Process Narratives</h2>
+        <div class="upload-section">
+          <label for="file-input-txt">Upload Narrative (.txt):</label>
+          <input type="file" id="file-input-txt" accept=".txt" />
+
+          <label for="file-input-json">Upload Predefined Values (.json):</label>
+          <input type="file" id="file-input-json" accept=".json" />
+
+          <button id="process-btn" class="btn">Process Files</button>
+        </div>
+
+        <div id="automated-form-container" style="display: none">
+          <h3>Add Tags Manually</h3>
+          <form id="automated-form">
+            <div class="form-group">
+              <label for="auto-name">Narrative Name:</label>
+              <input type="text" id="auto-name" required />
+            </div>
+            <div class="form-group">
+              <label for="auto-context">Core Context:</label>
+              <textarea id="auto-context" rows="3" required></textarea>
+            </div>
+            <div class="form-group">
+              <label>File Content:</label>
+              <div id="file-content-display" class="file-content-display"></div>
+            </div>
+            <div class="form-group">
+              <label>Tags:</label>
+              <div class="tags-container" id="auto-tags-container">
+                <div class="loading-tags">Loading tags...</div>
+              </div>
+              <div id="auto-selected-tags" class="selected-tags"></div>
+            </div>
+            <button type="submit" class="btn">Add to Table</button>
+            <button type="button" id="cancel-btn" class="btn secondary">
+              Cancel
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Table -->
+      <div class="narratives-table">
+        <h2>Narrative Entries</h2>
+        <table id="narrative-table">
+          <thead>
+            <tr>
+              <th>Narrative Name</th>
+              <th>Core Context</th>
+              <th>Tags</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="table-body"></tbody>
+        </table>
+        <div class="export-section">
+          <button id="export-json-btn" class="btn secondary">
+            Export to JSON
+          </button>
+        </div>
+      </div>
+    </div>
+    <script src="tagging.js"></script>
+  </body>
+</html>

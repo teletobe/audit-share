@@ -1,0 +1,32 @@
+Narrative ID: [Example: narrative-1]
+Core Concern  
+[2-sentence summary of ethical issue]  
+1. Raised By  
+[One sentence about who is the stakeholder group: e.g., "single parents", "disabled job seekers"]
+
+2. Context:
+[A paragraph about the concrete scenario. In it needs to be information about Who + Situation + Bot Interaction.]  
+
+3. Stakeholder Expectations:
+[A short paragraph about what they want the system to achieve/avoid or what it should do or be]
+
+4. Testable Boundaries: 
+Acceptable: [A sentence (or more if necessary) about the minimum passing standard - measurable outcome]  
+Ideal: [A sentence (or more if necessary) about an aspirational standard - measurable outcome]  
+Deal-Breaker: [A sentence (or more if necessary) about the unacceptable outcome - triggers audit failure]
+
+5. Value Relationships  
+Addressing this promotes: [This will a list of the values that were raised in a short paragraph with full sentences. If the narrative is addressed, then that would support or promote ... . Additionally, with each value, the reason or a because or an explanation is necessary. 
+Here, also any additional values and unclear but placed values should be placed or conflicts explained]
+
+Addressing this violates: [This will be a list of the values that came up in a short paragraph with full sentences. If the narrative is not addressed, then that would risk or hinder, violate or decrease ... . Additionally, with each value, the reason or a because or an explanation is necessary. 
+Here, also any additional values and unclear but placed values should be placed or conflicts explained]
+
+Primary Values: [here, the important values and their relation to others should be displayed. Please process the values for this step. Use full sentences here but make the values in bold.]
+Supporting Values: [here, if necessary, the secondary values and their relation to others should be displayed. Please process the values for this step. Use full sentences here but make the values in bold.]
+
+6. Metadata:  
+Source Board: [ID of the board]  
+Workshop Date: YYYY-MM-DD  
+Tech Version: [Prototype/v0.X (if known, else 'In Design Phase')]  
+Category: [Determine the category of this story, whether it is linked to Data, Behaviour, Model, Interaction]  

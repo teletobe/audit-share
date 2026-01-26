@@ -1,0 +1,253 @@
+[
+  {
+    "narratives": [
+      "narrative_1",
+      "narrative_5"
+    ],
+    "common_tags": {
+      "tag_10": 5,
+      "tag_11": 5,
+      "tag_13": 6
+    },
+    "total_weight": 16,
+    "avg_weight_per_tag": 5.33,
+    "avg_weight_per_narrative": 8.0,
+    "density": 2.67,
+    "cluster_id": "cluster_2"
+  },
+  {
+    "narratives": [
+      "narrative_3",
+      "narrative_7"
+    ],
+    "common_tags": {
+      "tag_29": 4,
+      "tag_20": 6,
+      "tag_6": 6
+    },
+    "total_weight": 16,
+    "avg_weight_per_tag": 5.33,
+    "avg_weight_per_narrative": 8.0,
+    "density": 2.67,
+    "cluster_id": "cluster_6"
+  },
+  {
+    "narratives": [
+      "narrative_1",
+      "narrative_6"
+    ],
+    "common_tags": {
+      "tag_6": 6,
+      "tag_11": 5,
+      "tag_9": 5
+    },
+    "total_weight": 16,
+    "avg_weight_per_tag": 5.33,
+    "avg_weight_per_narrative": 8.0,
+    "density": 2.67,
+    "cluster_id": "cluster_12"
+  },
+  {
+    "narratives": [
+      "narrative_3",
+      "narrative_6"
+    ],
+    "common_tags": {
+      "tag_6": 6,
+      "tag_20": 6,
+      "tag_17": 4
+    },
+    "total_weight": 16,
+    "avg_weight_per_tag": 5.33,
+    "avg_weight_per_narrative": 8.0,
+    "density": 2.67,
+    "cluster_id": "cluster_13"
+  },
+  {
+    "narratives": [
+      "narrative_1",
+      "narrative_3"
+    ],
+    "common_tags": {
+      "tag_6": 6,
+      "tag_8": 4,
+      "tag_12": 5
+    },
+    "total_weight": 15,
+    "avg_weight_per_tag": 5.0,
+    "avg_weight_per_narrative": 7.5,
+    "density": 2.5,
+    "cluster_id": "cluster_3"
+  },
+  {
+    "narratives": [
+      "narrative_6",
+      "narrative_7"
+    ],
+    "common_tags": {
+      "tag_43": 3,
+      "tag_20": 6,
+      "tag_6": 6
+    },
+    "total_weight": 15,
+    "avg_weight_per_tag": 5.0,
+    "avg_weight_per_narrative": 7.5,
+    "density": 2.5,
+    "cluster_id": "cluster_14"
+  },
+  {
+    "narratives": [
+      "narrative_4",
+      "narrative_8"
+    ],
+    "common_tags": {
+      "tag_30": 4,
+      "tag_23": 5,
+      "tag_39": 5,
+      "tag_38": 5,
+      "tag_36": 4,
+      "tag_9": 5
+    },
+    "total_weight": 28,
+    "avg_weight_per_tag": 4.67,
+    "avg_weight_per_narrative": 14.0,
+    "density": 2.33,
+    "cluster_id": "cluster_8"
+  },
+  {
+    "narratives": [
+      "narrative_2",
+      "narrative_3"
+    ],
+    "common_tags": {
+      "tag_19": 4,
+      "tag_20": 5,
+      "tag_8": 4,
+      "tag_17": 3
+    },
+    "total_weight": 16,
+    "avg_weight_per_tag": 4.0,
+    "avg_weight_per_narrative": 8.0,
+    "density": 2.0,
+    "cluster_id": "cluster_5"
+  },
+  {
+    "narratives": [
+      "narrative_6",
+      "narrative_8"
+    ],
+    "common_tags": {
+      "tag_43": 3,
+      "tag_17": 4,
+      "tag_9": 5,
+      "tag_23": 4
+    },
+    "total_weight": 16,
+    "avg_weight_per_tag": 4.0,
+    "avg_weight_per_narrative": 8.0,
+    "density": 2.0,
+    "cluster_id": "cluster_15"
+  },
+  {
+    "narratives": [
+      "narrative_2",
+      "narrative_6"
+    ],
+    "common_tags": {
+      "tag_20": 5,
+      "tag_17": 3,
+      "tag_23": 4
+    },
+    "total_weight": 12,
+    "avg_weight_per_tag": 4.0,
+    "avg_weight_per_narrative": 6.0,
+    "density": 2.0,
+    "cluster_id": "cluster_16"
+  },
+  {
+    "narratives": [
+      "narrative_5",
+      "narrative_7"
+    ],
+    "common_tags": {
+      "tag_41": 4,
+      "tag_30": 3,
+      "tag_46": 5,
+      "tag_43": 2,
+      "tag_18": 4,
+      "tag_13": 5,
+      "tag_40": 4
+    },
+    "total_weight": 27,
+    "avg_weight_per_tag": 3.86,
+    "avg_weight_per_narrative": 13.5,
+    "density": 1.93,
+    "cluster_id": "cluster_9"
+  },
+  {
+    "narratives": [
+      "narrative_2",
+      "narrative_8"
+    ],
+    "common_tags": {
+      "tag_14": 4,
+      "tag_17": 3,
+      "tag_23": 4
+    },
+    "total_weight": 11,
+    "avg_weight_per_tag": 3.67,
+    "avg_weight_per_narrative": 5.5,
+    "density": 1.83,
+    "cluster_id": "cluster_4"
+  },
+  {
+    "narratives": [
+      "narrative_5",
+      "narrative_6"
+    ],
+    "common_tags": {
+      "tag_43": 3,
+      "tag_44": 2,
+      "tag_11": 6,
+      "tag_17": 3
+    },
+    "total_weight": 14,
+    "avg_weight_per_tag": 3.5,
+    "avg_weight_per_narrative": 7.0,
+    "density": 1.75,
+    "cluster_id": "cluster_10"
+  },
+  {
+    "narratives": [
+      "narrative_5",
+      "narrative_8"
+    ],
+    "common_tags": {
+      "tag_45": 6,
+      "tag_43": 2,
+      "tag_30": 3,
+      "tag_17": 3
+    },
+    "total_weight": 14,
+    "avg_weight_per_tag": 3.5,
+    "avg_weight_per_narrative": 7.0,
+    "density": 1.75,
+    "cluster_id": "cluster_11"
+  },
+  {
+    "narratives": [
+      "narrative_4",
+      "narrative_5"
+    ],
+    "common_tags": {
+      "tag_33": 2,
+      "tag_30": 3,
+      "tag_31": 3
+    },
+    "total_weight": 8,
+    "avg_weight_per_tag": 2.67,
+    "avg_weight_per_narrative": 4.0,
+    "density": 1.33,
+    "cluster_id": "cluster_7"
+  }
+]

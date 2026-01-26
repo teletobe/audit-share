@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>EFA Report</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="report.js" defer></script>
+  </head>
+  <body>
+    <button class="back-button" onclick="location.href='index.html'">
+      ← Back to Home
+    </button>
+    <h1>Ethical Focus Area Report</h1>
+    <p>
+      Review and test Ethical Focus Areas (EFAs). Update statuses, add results,
+      and export a PDF summary.
+    </p>
+
+    <div id="efa-container"></div>
+
+    <div class="button-group">
+      <button id="download-pdf">Download Report as PDF</button>
+    </div>
+  </body>
+</html>

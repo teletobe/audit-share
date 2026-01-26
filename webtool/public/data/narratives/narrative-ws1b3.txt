@@ -1,0 +1,47 @@
+Narrative ID: narrative-ws1b3
+
+
+Core Concern
+There is a significant need for users to have access to professional career advice after interacting with a chat bot to ensure the advice is reliable and well-rounded. The concern primarily arises from the limitations of automated systems in providing comprehensive and authentic support.
+
+
+Raised By
+Individuals seeking career advice and support.
+
+
+Context
+Users who engage with a chat system for career advice often find themselves needing further validation and discussion with a professional. This need arises because while the chat bot can provide initial guidance, users feel the need to challenge and validate this advice from multiple sources to ensure its reliability and effectiveness. The interaction with the bot is seen as a preliminary step, with a strong preference for follow-up with a trained professional.
+
+
+Stakeholder Expectations
+Users expect the system to provide an option to connect with a professional after the chat session. This is aimed at ensuring that the advice received is thorough and can be cross-verified. Users want to ensure that the professional they connect with is competent and trained to give useful career advice.
+
+
+Testable Boundaries
+Acceptable: The system should offer the option to schedule an appointment with a professional at the end of the conversation, even if it is not instant.
+Ideal: The system should have a button in the chat that instantly connects users to a professional, allowing them to share only the parts of the conversation they wish to discuss.
+Deal-Breaker: The absence of an option to connect with a professional or the professional lacking the necessary competence in giving career advice would be unacceptable.
+
+
+Value Relationships
+Addressing this promotes:
+Support and solidarity, as outsourcing career advice solely to a bot can leave people feeling alone and unsupported. This is super important because career advice is a sensitive and personal matter that often requires human empathy and understanding. Additionally, accessibility is promoted as not everyone may be comfortable with face-to-face talks, and providing multiple options for interaction can cater to different preferences.
+
+
+Addressing this violates:
+Authenticity and reliability, as LLMs cannot be entirely authentic and users want to rely on the competence of a human professional. This is super important because without a fallback to a competent human, users may feel that the advice lacks credibility. Safety is also at risk as LLMs can sometimes provide misleading information, which is super important to avoid. Furthermore, ensuring the availability of a trained professional is crucial for reliability.
+
+
+Primary Values:
+Authenticity is a primary value because users seek genuine and competent career advice that a chat bot alone cannot provide. This is closely linked to reliability, as users need to trust the competence of the advice they receive. Safety is also a primary value because users need to ensure that the advice they receive is accurate and not misleading.
+
+
+Supporting Values:
+Support and solidarity are important supporting values because they ensure that users do not feel isolated in their career advice journey. Accessibility is also crucial as it ensures that the system caters to different user preferences and comfort levels.
+
+
+Metadata:
+Source Board: WS-1-board3
+Workshop Date: 2025-07-09
+Tech Version: In Design Phase
+Category: Interaction

@@ -1,0 +1,38 @@
+Narrative ID: narrative-ws2b1
+
+
+Core Concern
+The primary ethical issue is the need for a tool to explain outcomes in easy and accessible language, ensuring that people from diverse backgrounds can understand the results. This is crucial as complex and difficult language often hinders comprehension for many individuals.
+
+
+Raised By
+The stakeholder group is individuals from varying backgrounds who struggle with complex language and long content.
+
+
+Context
+The situation involves individuals interacting with a tool meant to provide outcomes or explanations. These individuals come from diverse backgrounds and often find it challenging to comprehend complex language and extensive content. The tool needs to be designed in a way that makes it accessible and understandable for everyone.
+
+
+Stakeholder Expectations
+In order to achieve this, everyone should be able to understand the outcome of the tool, regardless of their backgrounds. The system should be able to explain in easy and accessible language what the outcomes are, ensuring inclusivity.
+
+
+Testable Boundaries
+Ideal: The minimum passing standard would be a tool that is accessible in different languages and sign language, utilizing "einfache Sprache" (simple language) as an option. It should have multiple input and output channels, with visual representations of content that are accessible, structured, and short sentences that are screen reader proof.
+Deal-Breaker: The tool should not use only complex terms, provide just a link list to other complex texts, fail to understand natural language, or produce gibberish.
+
+
+Value Relationships
+Addressing this promotes: The promotion of respect is evident as developing something that includes access to everyone shows respect to all people. This fosters autonomy because all people can self-dependently use the tool. It also encourages empowerment by ensuring that people feel their input matters. Additionally, participation is promoted as everyone should be thought of as a participant. Diversity is supported for a broad user group so that no one feels excluded. Accessibility is essential as the tool needs to be accessible for everyone.
+Addressing this violates: If the narrative is not addressed, it would risk violating trust because if the output is wrong or cannot be understood, people lose trust in the tool. It might also hinder human dignity as technology might "look down" on users based on the language used.
+
+
+Primary Values:
+Accessibility is of super importance as the tool needs to be accessible for everyone. This value is closely related to Diversity because ensuring accessibility supports a broad user group and prevents anyone from feeling excluded. The primary values here aim to foster an inclusive environment where everyone can participate and feel respected. Additionally, Respect is important because developing something that includes access to everyone shows respect to all people. Autonomy is super important as it enables all people to self-dependently use the tool. This value works closely with Empowerment and Participation which are also super important as they ensure that people feel their input matters and that everyone should be thought of as a participant.
+
+
+Metadata:
+Source Board: WS-2-board1
+Workshop Date: 2025-07-10
+Tech Version: In Design Phase
+Category: Interaction

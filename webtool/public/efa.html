@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>EFA Generator - Home</title>
+    <link rel="stylesheet" href="efa.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <button class="back-button" onclick="location.href='index.html'">
+          ← Back to Home
+        </button>
+        <h1>EFA Generator</h1>
+        <p>Select a tool to get started:</p>
+      </header>
+
+      <div
+        style="
+          display: flex;
+          gap: 30px;
+          justify-content: center;
+          margin-top: 50px;
+        "
+      >
+        <button
+          class="btn"
+          style="min-width: 180px; font-size: 18px"
+          onclick="location.href='tagging.html'"
+        >
+          Annotation Tagging
+        </button>
+        <button
+          class="btn"
+          style="min-width: 180px; font-size: 18px"
+          onclick="location.href='efa-creator.html'"
+        >
+          EFA Creation
+        </button>
+      </div>
+    </div>
+    <script src="efa.js"></script>
+  </body>
+</html>

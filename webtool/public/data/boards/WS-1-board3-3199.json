@@ -1,0 +1,50 @@
+{
+  "workshopDate": "2025-07-09",
+  "sourceBoardID": "WS-1-board3",
+  "storyParticipantNumber": "9",
+  "iWant": "to have an option to talk to a professional person after the chat, to discuss the advice or some level of double checking",
+  "soThat": "I can challenge the advice from different sides",
+  "because": "I know how valuable feedback from different sources can be (it comes from a caring perspective)",
+  "criteriaParticipantNumbers": "9,13,14,19",
+  "desirable": "I have a button in the chat where I can instantly reach a professional person on career advice and only sharing parts of the conversation that I want",
+  "acceptable": "same situation as desirable, but not instantly, but have the option to make appointment in the end of conversation",
+  "dealBreakers": "there is no option / or person is not trained on giving useful career advice",
+  "comment": "Support/Solidarity and Accessibility and Reliability all placed very close to each other",
+  "values": [
+    {
+      "participantNumber": "9",
+      "value": "Authenticity",
+      "explanation": "LLM can't be 'authentic'. Competencies necessary",
+      "category": "hinder",
+      "importance": "Super Important"
+    },
+    {
+      "participantNumber": "14",
+      "value": "Support/Solidarity",
+      "explanation": "\"just\" outsourcing career advice to bot, leaves people alone",
+      "category": "promote",
+      "importance": "Super Important"
+    },
+    {
+      "participantNumber": "13",
+      "value": "Accessibility",
+      "explanation": "People might prefer face-to-face / not everyone might be comfortable with face-to-face talks",
+      "category": "promote",
+      "importance": "Super Important"
+    },
+    {
+      "participantNumber": "9",
+      "value": "Reliability",
+      "explanation": "we want to rely on the competence of the person - if it lacks it, we have no fallback",
+      "category": "hinder",
+      "importance": "Super Important"
+    },
+    {
+      "participantNumber": "19",
+      "value": "Safety",
+      "explanation": "LLM's can 'bullshit'",
+      "category": "hinder",
+      "importance": "Super Important"
+    }
+  ]
+}

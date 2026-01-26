@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Digitize Cardboard</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <button class="back-button" onclick="location.href='index.html'">
+        ← Back to Home
+      </button>
+
+      <h1>Digitize Cardboard</h1>
+      <div class="button-group">
+        <button id="startBtn">Add New Board</button>
+        <button id="loadBoardBtn">Show Board Digitally</button>
+      </div>
+      <input
+        type="file"
+        id="jsonFileUpload"
+        accept=".json"
+        style="display: none"
+      />
+
+      <!-- Centered board display container -->
+      <div
+        id="boardContainer"
+        style="display: none; margin: 0 auto; text-align: center"
+      >
+        <div id="board"></div>
+      </div>
+
+      <div id="formContainer" style="display: none">
+        <form id="boardForm">
+          <!-- NEW WORKSHOP INFO -->
+          <fieldset>
+            <legend>Workshop Info</legend>
+            <label
+              >Workshop Date:<br />
+              <input type="date" name="workshopDate" required /> </label
+            ><br />
+            <label
+              >Source Board ID:<br />
+              <input
+                type="text"
+                name="sourceBoardID"
+                placeholder="e.g., Board-2025-01"
+              />
+            </label>
+          </fieldset>
+          <fieldset>
+            <legend>Story Sheet</legend>
+            <label
+              >Story Participant Number:<br /><input
+                type="number"
+                name="storyParticipantNumber"
+                min="1"
+                required /></label
+            ><br />
+            <label
+              >I want:<br /><input type="text" name="iWant" required /></label
+            ><br />
+            <label
+              >So that:<br /><input type="text" name="soThat" required /></label
+            ><br />
+            <label>Because:<br /><input type="text" name="because" /></label>
+          </fieldset>
+
+          <fieldset>
+            <legend>Criteria</legend>
+            <label
+              >Criteria Participant Numbers:<br /><input
+                type="text"
+                name="criteriaParticipantNumbers" /></label
+            ><br />
+            <label
+              >Desirable Behaviour:<br /><textarea
+                name="desirable"
+              ></textarea></label
+            ><br />
+            <label
+              >Acceptable:<br /><textarea name="acceptable"></textarea></label
+            ><br />
+            <label
+              >Deal-breakers:<br /><textarea name="dealBreakers"></textarea>
+            </label>
+          </fieldset>
+
+          <fieldset>
+            <legend>Values</legend>
+            <div id="valuesContainer"></div>
+            <button type="button" id="addValueBtn">➕ Add Value</button>
+          </fieldset>
+
+          <fieldset>
+            <legend>Optional Comment</legend>
+            <textarea name="comment" rows="4"></textarea>
+          </fieldset>
+          <button type="submit" class="primary">Preview</button>
+        </form>
+      </div>
+
+      <div id="previewContainer" style="display: none">
+        <h2>Board Preview</h2>
+        <pre id="preview"></pre>
+        <button id="editBtn">Edit</button>
+        <button id="saveBtn" class="primary">Save</button>
+      </div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+Narrative ID: narrative-ws2b2
+
+
+Core Concern
+The technology in use is discriminatory based on characteristics that people cannot or only hardly change, leading to exclusion. The system should be non-discriminatory to ensure inclusivity and fairness.
+
+
+Raised By
+Those who care about inclusivity and have experienced exclusion.
+
+
+Context
+Individuals interacting with the technology may feel excluded or discriminated against based on certain characteristics. This interaction highlights the need for a system that respects user privacy and ensures no one feels marginalized.
+
+
+Stakeholder Expectations
+It is expected that the system should not create profiles or use data without user consent. The goal is for people to feel included and respected, ensuring that their personal information is handled carefully and not used for purposes they did not consent to.
+
+
+Testable Boundaries
+Acceptable: The system must mention existing biases to ensure transparency and understanding of its limitations.
+Ideal: The system should only use data and context provided by the users themselves and avoid creating user profiles based on this data.
+Deal-Breaker: The system must not use slurs, exploit identity aspects for job matching, or ask personal questions, as these actions would violate user privacy and respect.
+
+
+Value Relationships
+Addressing this promotes: The narrative supports values such as Respect and Privacy. Respect is promoted because the privacy of the user is valued, ensuring that data is handled carefully and not misused. Privacy is crucial as it ensures that user data is not distributed or made available without consent. Honesty is important in communicating about the different data gathered and decisions made. Transparency is valued to explain biases and the origins of outputs. Health is promoted as discrimination can cause mental and physical health issues. Dignity is upheld by treating people with respect and avoiding discrimination. Justice is important because one's background should not influence future possibilities. Accountability is also a significant value, though its accountability in the case of biases remains unclear.
+Addressing this violates: If the narrative is not addressed, it risks or hinders values such as Respect and Dignity. Violations would occur if the system uses slurs, asks personal questions, or exploits identity aspects, leading to feelings of exclusion and disrespect. Accountability would be compromised if biases occur without clear accountability.
+
+
+Primary Values:
+The primary values are Respect and Privacy, which are super important and closely related. Respect ensures that users' privacy is valued, and privacy ensures that user data is handled carefully. Honesty and Transparency are also important values, promoting open communication about data and decisions. These values are essential for building trust and ensuring that users feel their data is being handled responsibly.
+Supporting Values:
+Supporting values include Health, Dignity, and Justice. Health is super important because discrimination can lead to serious mental and physical issues. Dignity is important as it ensures that people are treated with respect and not discriminated against. Justice is super important as it ensures that one's background does not influence future opportunities. Accountability is a value that is important but currently unclear in its categorization.
+
+
+Metadata:
+Source Board: WS-2-board2
+Workshop Date: 2025-07-10
+Tech Version: In Design Phase
+Category: Data

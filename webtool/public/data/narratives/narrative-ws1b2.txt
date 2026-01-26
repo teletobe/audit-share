@@ -1,0 +1,43 @@
+Narrative ID: narrative-ws1b2
+
+
+Core Concern
+The chatbot currently provides suggestions strictly based on the information provided by the user, which can limit the range of career options presented. The system should expand its recommendations to include well-argued suggestions from other fields to broaden the user’s horizons.
+
+
+Raised By
+Job seekers who are looking for career advice and broad-ranging suggestions.
+
+
+Context
+Users interact with a career advice chatbot with the expectation of receiving personalized career suggestions. Currently, the bot offers recommendations that closely match the user's provided information, often failing to introduce users to less conventional but potentially suitable career paths. This interaction leaves users with a narrow perspective on their career options, possibly missing out on opportunities that could better fit their skills and interests.
+
+
+Stakeholder Expectations
+Users want the chatbot to expand its recommendations to include suggestions from diverse fields, even if they don't initially seem like a perfect fit. This approach is expected to encourage users to explore a wider range of career options, thereby promoting personal growth and greater satisfaction with their career choices.
+
+
+Testable Boundaries
+Acceptable: For every recommendation that matches the user’s information, the bot should also provide one counter-suggestion from a different field.
+Ideal: The bot should feature a button that allows users to opt into seeing out-of-the-box recommendations and should help users understand why certain careers might not be interesting to them.
+Deal-Breaker: The bot should avoid strictly limiting suggestions based on the user’s answers, historical stereotypes, and biases.
+
+
+Value Relationships
+Addressing this promotes: Addressing this concern supports Personal Growth by exposing users to a variety of career paths, thereby increasing the likelihood of personal development. Additionally, it fosters Diversity by broadening the backgrounds of individuals entering different professions. Transparency is also promoted, as users will better understand the range of choices available to them. Moreover, this approach empowers users by enabling them to choose from a broader range of options, thereby supporting Empowerment. Choosing a fitting career is crucial for Happiness, which is further promoted by this approach.
+
+
+Addressing this violates: If not addressed, this concern risks hindering Privacy, as users may need to provide more personal or sensitive information for better suggestions. Additionally, it may limit Transparency, as users would not understand why certain choices are given to them. Moreover, it risks reducing Empowerment, as users would have fewer options to choose from. Finally, not addressing this issue could result in less Happiness, as users might not find a fitting career due to limited suggestions.
+
+
+Primary Values: The primary values to consider are Transparency, Empowerment, and Happiness. Transparency is crucial for users to understand the choices they are given, while Empowerment allows them to make informed decisions from a broader range of options. Happiness is a key outcome, as choosing a fitting career significantly contributes to personal satisfaction.
+
+
+Supporting Values: Supporting these primary values are Personal Growth and Diversity. Personal Growth is supported by exposing users to a variety of career paths, and Diversity is promoted by encouraging individuals from different backgrounds to consider various professions.
+
+
+Metadata:
+Source Board: WS-1-board2
+Workshop Date: 2025-07-09
+Tech Version: In Design Phase
+Category: Interaction

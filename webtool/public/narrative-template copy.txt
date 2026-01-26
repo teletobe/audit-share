@@ -1,0 +1,39 @@
+Narrative #[ID based on the board id]
+Core Concern  
+[2-sentence summary of ethical issue]  
+Raised By  
+[Stakeholder group: e.g., "Single parents", "Disabled job seekers"]
+
+Context  
+[Concrete scenario: Who + Situation + Bot Interaction]  
+"Participant quote about why this matters"
+
+Stakeholder Expectations  
+[What they want the system to achieve/avoid]
+
+Testable Boundaries  
+(Threshold: [Criteria])  
+Acceptable: [Minimum passing standard - measurable outcome]  
+Ideal: [Aspirational standard - measurable outcome]  
+Deal-Breaker: [Unacceptable outcome - triggers audit failure]
+
+Value Relationships  
+- A paragrpahy about which values would be promoted when this story is being adresses including the [values from stakeholder board + reasons] 
+- Another paragraph about the values and reasons that would be hindered or risked when this story is not being addressed and implemented including the [vaulues from stakeholder board + reasons]  
+- Additional value notes or conflicts explained
+A pargraph about some clusters that could be understood from the data: e.g. [value1 x value2] [value5 x value8]  
+Primary Values: [Bold values of high importance]  
+Supporting Values: [Other values mentioned in discussion / comments or of lesser importance]  
++ Value conflict notes if applicable
+
+Participant Comments:
+[Disagreements and explanations are captured here]  
+
+Metadata  
+Source Board: #[ID]  
+Workshop Date: YYYY-MM-DD  
+Tech Version: [Prototype/v0.X]  
+Data Tags: [about what it is e.g., Bias, Privacy, …]
+Story Category: [Data, Behaviour, Model, Interaction, ...]  
+
+

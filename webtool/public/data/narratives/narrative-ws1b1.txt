@@ -1,0 +1,46 @@
+Narrative ID: narrative-ws1b1
+
+
+Core Concern
+There is a need to understand the limitations and strengths of the deployed chatbot to make informed decisions. This is crucial because chatbot interfaces can look similar while offering widely different capabilities in terms of trustworthiness, reliability, usefulness, and more.
+
+
+Context
+Participants who interact with the chatbot require clarity on its capabilities to ensure they make well-informed decisions based on the information it provides. The situation involves stakeholders who are using the chatbot as a tool and need to evaluate its effectiveness in different scenarios.
+
+
+Stakeholder Expectations
+These stakeholders want the system to provide useful information about its limitations and strengths at multiple levels of expertise and in various formats such as videos and texts. This need is driven by the differing capabilities of chatbot interfaces in terms of trust, reliability, and usefulness.
+Testable Boundaries
+
+
+Acceptable:
+The system should provide the necessary information, even if in fewer formats.
+Ideal:
+The system should provide useful information about its limitations and strengths at multiple levels of expertise and in multiple formats.
+Deal-Breaker:
+The information should not be missing or not comprehensible to varying levels of expertise or stakeholders.
+
+
+Value Relationships
+Addressing this promotes:
+If this narrative is addressed, it would support Empowerment, which enables users to reflect on what the chatbot perceives. This is super important because it gives users a better understanding and control over the information they receive. Transparency is also promoted, as it is the main claim and is super important for ensuring that the system’s operations are clear and understandable. This transparency is essential for achieving Accountability, which is important as it holds the system responsible for its actions. Lastly, Trust is promoted, as it follows from the goal of transparency and is super important for building a reliable interaction between users and the chatbot.
+
+
+Addressing this violates:
+If this narrative is not addressed, it would risk Accessibility, which is important because being required to inform oneself is a barrier. This hinders users from easily obtaining the information they need, making the system less user-friendly and less effective overall.
+
+
+Primary Values:
+Empowerment is super important and promotes user engagement by enabling reflection on the chatbot’s perceptions. Trust is super important and follows from transparency, ensuring reliable interactions.
+
+
+Supporting Values:
+Transparency is super important as the main claim, promoting accountability. Accountability is important and is achievable through transparency.
+
+
+Metadata:
+Source Board: WS-1-board1
+Workshop Date: 2025-07-09
+Tech Version: In Design Phase
+Category: Interaction

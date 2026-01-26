@@ -1,0 +1,22 @@
+{
+  "workshopDate": "2025-08-12",
+  "sourceBoardID": "test",
+  "storyParticipantNumber": "12",
+  "iWant": "test",
+  "soThat": "test",
+  "because": "test",
+  "criteriaParticipantNumbers": "12,3",
+  "desirable": "ste",
+  "acceptable": "tes",
+  "dealBreakers": "tes",
+  "comment": "",
+  "values": [
+    {
+      "participantNumber": "12",
+      "value": "Authenticity",
+      "reason": "w",
+      "category": "Promote",
+      "importance": "Important"
+    }
+  ]
+}

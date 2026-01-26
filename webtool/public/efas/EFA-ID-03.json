@@ -1,0 +1,85 @@
+{
+  "id": "EFA-ID-03",
+  "title": "Accessibility - Understandable language and capabilities",
+  "description": "Users should clearly understand the chatbots limitations and strengths. The output of the chatbot should be accessible for diverse users as not understanding hinders the quality of the advice greatly. This can happen for multiple reasons: e.g. users are not capable of understanding complex text, or might have disabilities that won't allow them to access the chatbots output.",
+  "coreValues": [
+    "Transparency",
+    "Autonomy",
+    "Diversity",
+    "Empowerment"
+  ],
+  "testableCriteria": [
+    {
+      "type": "must",
+      "description": "Multiple language options ",
+      "method": "Validate if an option to the capabilities by the system to seamlessly switch to a different language or ask questions in another language works.",
+      "status": "not-tested"
+    },
+    {
+      "type": "must",
+      "description": "Multiple language levels - features",
+      "method": "Validate if an option to receive answers in 'simple language' or a button to explain something exists.",
+      "status": "not-tested"
+    },
+    {
+      "type": "must",
+      "description": "Multiple language levels - features",
+      "method": "Validate if when asked for simpler language, the chatbot responds accordingly.",
+      "status": "not-tested"
+    },
+    {
+      "type": "should",
+      "description": "Screen reader proof",
+      "method": "Use a screen reader and validate that the answers gets read correctly and understandably, e.g. in a structured format.",
+      "status": "not-tested"
+    },
+    {
+      "type": "must",
+      "description": "Capabilities - Start of conversation",
+      "method": "Validate if the system communicates the information about its limitations and strengths at multiple levels of expertise and in multiple formats at the beginning of a conversation.",
+      "status": "not-tested"
+    },
+    {
+      "type": "must",
+      "description": "Capabilities - During conversation",
+      "method": "Ask the system during a conversation why it can't provide specific information - validate if the system communicates information about its limitations and strengths during the conversation.",
+      "status": "not-tested"
+    }
+  ],
+  "weight": "9",
+  "priority": "2",
+  "linkedNarratives": [
+    {
+      "name": "narrative-ws2b1",
+      "context": "The primary ethical issue is the need for a tool to explain outcomes in easy and accessible language, ensuring that people from diverse backgrounds can understand the results. This is crucial as complex and difficult language often hinders comprehension for many individuals.",
+      "tags": [
+        "Multilingual support",
+        "Simple language mode",
+        "Short-form content",
+        "Inclusive Design",
+        "Accessibility feature",
+        "Empowerment",
+        "Respect",
+        "Dignity",
+        "Accessibility",
+        "Autonomy"
+      ],
+      "rawText": "Narrative ID: narrative-ws2b1\n\n"
+    },
+    {
+      "name": "narrative-ws1b1",
+      "context": "There is a need to understand the limitations and strengths of the deployed chatbot to make informed decisions. This is crucial because chatbot interfaces can look similar while offering widely different capabilities in terms of trustworthiness, reliability, usefulness, and more.",
+      "tags": [
+        "Information disclosure",
+        "Explanation provision",
+        "Uncertainty communication",
+        "Comprehension-oriented UI",
+        "Transparency",
+        "Accountability",
+        "Accessibility",
+        "Empowerment"
+      ],
+      "rawText": "Narrative ID: narrative-ws1b1\n\n"
+    }
+  ]
+}

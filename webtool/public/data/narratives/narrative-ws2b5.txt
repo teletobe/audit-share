@@ -1,0 +1,42 @@
+Narrative ID: narrative-ws2b5
+
+Core Concern:
+The career suggestion system may inadvertently promote stereotypical career paths based on users' gender, education, or hobbies, leading to potential mismatches later in life. Young individuals unsure about their interests and values may miss out on suitable career options due to these biases.
+
+
+Raised By
+Young individuals exploring career paths.
+
+
+Context Young users interacting with a career suggestion chatbot to explore various career paths. These users are at a stage where they are unsure about their interests and values and want to ensure they don't miss out on potential career opportunities due to biased suggestions. The chatbot provides career recommendations based on user data, but there is a concern that these recommendations might be influenced by stereotypes related to gender, current education, or hobbies.
+
+
+Stakeholder Expectations: Users want the system to suggest a wide range of career paths with accurate descriptions of daily life in those professions. They aim to avoid stereotypical recommendations that could lead them to pursue unsuitable careers later in life. The system should not exclude options based on the user's current profile, background, or demographic data.
+
+
+Testable Boundaries
+Acceptable: The chatbot should provide recommendations based on the data provided by the user and explain why certain options were included or excluded.
+Ideal: The chatbot should offer a broad range of career recommendations not limited to existing job profiles, roles, or stereotypes, allowing users to narrow down options themselves. 
+Deal-Breaker: The system should not exclude career options based on the user's current profile, background, or demographic data.
+
+
+Value Relationships
+Addressing this promotes: Inclusivity, because job recommendations should be indifferent to background, ensuring that everyone has equal opportunities. Diversity, as it enables non-biased job selection, promoting a varied range of career options. Autonomy, since users can decide whether to exclude a job offering based on their preferences. Safety, by excluding job opportunities that could threaten financial stability. Happiness, as users are able to make informed decisions about their careers. Support, as the chatbot argues why jobs are excluded or included, providing transparency. Privacy, because users choose what information to give to the chatbot, ensuring they control their data.
+
+
+Addressing this violates Trust, as the chatbot requires a lot of trust from users, which could be compromised if recommendations are biased. Creativity, since users consider options without the chatbot's interference, relying on their own creativity, which could be limited by biased suggestions.
+
+
+Primary Values: The primary values are Inclusivity and Diversity. Inclusivity is essential as it ensures job recommendations are indifferent to background, promoting equal opportunities for all users. This value is closely related to Diversity, which enables non-biased job selection and promotes a varied range of career options. These values are crucial for ensuring that the career suggestion system is fair and unbiased.
+
+
+Supporting Values: Autonomy is important as it allows users to decide whether to exclude a job offering based on their preferences, giving them control over their career choices. Safety is another supporting value, ensuring that job opportunities do not threaten financial stability. Happiness is promoted as users are able to make informed decisions about their careers, leading to greater satisfaction. Support is provided by the chatbot explaining why jobs are excluded or included, offering transparency. Privacy is maintained as users choose what information to give to the chatbot, ensuring they control their data. However, there are concerns around Trust and Creativity, which need to be carefully managed to ensure the system meets user expectations.
+
+
+Metadata
+Source Board: WS-2-board5 
+Workshop Date: 2025-07-10 
+Tech Version:[In Design Phase 
+Category: Interaction
+
+
